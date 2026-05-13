@@ -62,22 +62,22 @@ export function Hero() {
             </ul>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div className="relative mx-auto hidden w-full max-w-lg lg:block lg:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft-lg ring-1 ring-white/10">
               <Image
                 src={HERO_IMAGE}
                 alt="Anak belajar dengan fokus didampingi tutor di rumah"
                 fill
                 priority
-                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 60vw, 90vw"
+                sizes="(min-width: 1024px) 40vw, 0px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-4 -left-4 hidden rounded-xl bg-brand-yellow-500 px-4 py-3 font-semibold text-brand-navy shadow-soft-lg sm:block">
+            <div className="absolute -bottom-4 -left-4 rounded-xl bg-brand-yellow-500 px-4 py-3 font-semibold text-brand-navy shadow-soft-lg">
               500+ siswa puas
             </div>
-            <div className="absolute -right-3 -top-3 hidden rounded-xl bg-white px-4 py-3 text-sm font-semibold text-brand-navy shadow-soft-lg sm:block">
+            <div className="absolute -right-3 -top-3 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-brand-navy shadow-soft-lg">
               ⭐ 4.9 / 5 rating
             </div>
           </div>

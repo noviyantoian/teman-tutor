@@ -23,15 +23,14 @@ export function ProgramHighlightsSection() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Program</span>
           <h2 className="mt-4 font-display text-heading-1 font-bold text-brand-navy">
-            Program belajar untuk{' '}
-            <span className="text-brand-yellow-500">setiap fase</span>
+            Program belajar untuk <span className="text-brand-yellow-500">setiap fase</span>
           </h2>
           <p className="mt-3 text-base text-brand-navy-400 md:text-lg">
             Dari calistung hingga persiapan PTN, bahasa asing, dan musik.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 md:mt-12 md:gap-6 lg:grid-cols-4">
           {CATEGORY_ORDER.map((cat) => {
             const sample = programs.filter((p) => p.category === cat && p.isActive)[0];
             if (!sample) return null;
@@ -39,15 +38,15 @@ export function ProgramHighlightsSection() {
             return (
               <article
                 key={cat}
-                className="group flex flex-col rounded-2xl border border-brand-navy-50 bg-white p-6 shadow-soft-sm transition-all hover:-translate-y-1 hover:border-brand-yellow-300 hover:shadow-soft"
+                className="group flex flex-col rounded-xl border border-brand-navy-50 bg-white p-4 shadow-soft-sm transition-all hover:-translate-y-1 hover:border-brand-yellow-300 hover:shadow-soft sm:p-5 md:rounded-2xl md:p-6"
               >
-                <div className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-yellow-100 text-brand-navy">
-                  <Icon className="size-6" aria-hidden />
+                <div className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-yellow-100 text-brand-navy md:size-12 md:rounded-xl">
+                  <Icon className="size-5 md:size-6" aria-hidden />
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-brand-navy">
+                <h3 className="mt-3 text-base font-semibold leading-tight text-brand-navy md:mt-4 md:text-xl">
                   {programCategoryLabel[cat]}
                 </h3>
-                <p className="mt-1 text-sm text-brand-navy-400">
+                <p className="mt-1 line-clamp-2 text-xs text-brand-navy-400 md:line-clamp-none md:text-sm">
                   {programs
                     .filter((p) => p.category === cat)
                     .slice(0, 3)
@@ -55,12 +54,19 @@ export function ProgramHighlightsSection() {
                     .join(', ')}
                   {programs.filter((p) => p.category === cat).length > 3 ? '…' : ''}
                 </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <Badge variant="muted">Mulai {formatIDR(sample.priceFrom)}</Badge>
+                <div className="mt-3 flex items-center justify-between md:mt-4">
+                  <Badge variant="muted" className="text-[11px] md:text-xs">
+                    Mulai {formatIDR(sample.priceFrom)}
+                  </Badge>
                 </div>
-                <Button asChild variant="ghost" size="md" className="mt-6 self-start">
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="sm"
+                  className="mt-4 self-start px-2 text-xs md:mt-6 md:px-3 md:text-sm"
+                >
                   <Link href={`/program#${cat}`}>
-                    Lihat detail <ArrowRight className="size-4" />
+                    Lihat detail <ArrowRight className="size-3.5 md:size-4" />
                   </Link>
                 </Button>
               </article>

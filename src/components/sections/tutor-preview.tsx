@@ -30,38 +30,46 @@ export function TutorPreviewSection() {
           </Button>
         </div>
 
-        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <ul
+          className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:snap-none md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+          aria-label="Daftar tutor pilihan"
+        >
           {featured.map((t) => (
             <li
               key={t.id}
-              className="overflow-hidden rounded-2xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-1 hover:shadow-soft"
+              className="w-[68vw] max-w-[280px] shrink-0 snap-start overflow-hidden rounded-2xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-1 hover:shadow-soft sm:w-[40vw] md:w-auto md:max-w-none md:shrink"
             >
               <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-brand-navy-100 to-brand-yellow-100">
                 <Image
                   src={t.photoUrl}
                   alt={`Foto ${t.fullName}`}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 68vw"
                   className="object-cover"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-brand-navy">{t.fullName}</h3>
-                <p className="mt-1 line-clamp-2 text-sm text-brand-navy-400">
+              <div className="p-4 md:p-5">
+                <h3 className="text-base font-semibold text-brand-navy md:text-lg">{t.fullName}</h3>
+                <p className="mt-1 line-clamp-2 text-xs text-brand-navy-400 md:text-sm">
                   {t.subjects.join(' · ')}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {t.badges.slice(0, 2).map((b) => (
-                    <Badge key={b} variant="muted">
+                    <Badge key={b} variant="muted" className="text-[11px] md:text-xs">
                       {b}
                     </Badge>
                   ))}
-                  <Badge variant="outline">{t.experienceYears}+ tahun</Badge>
+                  <Badge variant="outline" className="text-[11px] md:text-xs">
+                    {t.experienceYears}+ tahun
+                  </Badge>
                 </div>
               </div>
             </li>
           ))}
         </ul>
+        <p className="mt-3 text-center text-xs text-brand-navy-400 md:hidden" aria-hidden>
+          ← geser untuk lihat tutor lain →
+        </p>
 
         <div className="mt-8 text-center md:hidden">
           <Button asChild variant="outline" size="lg">
