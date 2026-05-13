@@ -75,44 +75,48 @@ export default function ProgramPage() {
                   {programCategoryLabel[cat]}
                 </h2>
               </div>
-              <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:grid-cols-3">
                 {items.map((p) => {
                   const Icon = pickIcon(p.icon);
                   return (
                     <article
                       key={p.id}
-                      className="flex flex-col rounded-2xl border border-brand-navy-50 bg-white p-6 shadow-soft-sm transition-all hover:shadow-soft"
+                      className="flex flex-col rounded-xl border border-brand-navy-50 bg-white p-4 shadow-soft-sm transition-all hover:shadow-soft md:rounded-2xl md:p-6"
                     >
-                      <div className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-yellow-100 text-brand-navy">
-                        <Icon className="size-6" aria-hidden />
+                      <div className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-yellow-100 text-brand-navy md:size-12 md:rounded-xl">
+                        <Icon className="size-5 md:size-6" aria-hidden />
                       </div>
-                      <h3 className="mt-4 text-lg font-semibold text-brand-navy">{p.name}</h3>
-                      <p className="mt-1.5 text-sm text-brand-navy-400">{p.description}</p>
-                      <ul className="mt-4 space-y-1.5">
-                        {p.subjects.slice(0, 4).map((s) => (
+                      <h3 className="mt-3 text-base font-semibold leading-tight text-brand-navy md:mt-4 md:text-lg">
+                        {p.name}
+                      </h3>
+                      <p className="mt-1 line-clamp-2 text-xs text-brand-navy-400 md:mt-1.5 md:line-clamp-none md:text-sm">
+                        {p.description}
+                      </p>
+                      <ul className="mt-3 space-y-1 md:mt-4 md:space-y-1.5">
+                        {p.subjects.slice(0, 3).map((s) => (
                           <li
                             key={s}
-                            className="flex items-center gap-2 text-sm text-brand-navy-600"
+                            className="flex items-center gap-1.5 text-xs text-brand-navy-600 md:gap-2 md:text-sm"
                           >
                             <CheckCircle2
-                              className="size-4 shrink-0 text-brand-yellow-500"
+                              className="size-3.5 shrink-0 text-brand-yellow-500 md:size-4"
                               aria-hidden
                             />
-                            {s}
+                            <span className="truncate">{s}</span>
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-6 flex items-center justify-between border-t border-brand-navy-50 pt-4">
+                      <div className="mt-auto flex flex-col gap-3 border-t border-brand-navy-50 pt-3 md:mt-6 md:flex-row md:items-center md:justify-between md:pt-4">
                         <div>
-                          <p className="text-xs text-brand-navy-400">Mulai dari</p>
-                          <p className="text-lg font-bold text-brand-navy">
+                          <p className="text-[11px] text-brand-navy-400 md:text-xs">Mulai dari</p>
+                          <p className="text-base font-bold leading-tight text-brand-navy md:text-lg">
                             {formatIDR(p.priceFrom)}{' '}
-                            <span className="text-xs font-normal text-brand-navy-400">
+                            <span className="text-[10px] font-normal text-brand-navy-400 md:text-xs">
                               / {p.sessionDurationMinutes}min
                             </span>
                           </p>
                         </div>
-                        <Button asChild variant="accent" size="sm">
+                        <Button asChild variant="accent" size="sm" className="w-full md:w-auto">
                           <a
                             href={waLinkForProgram(p.name)}
                             target="_blank"

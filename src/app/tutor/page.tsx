@@ -42,36 +42,49 @@ export default function TutorPage() {
 
       <section className="section-tight bg-white">
         <div className="container">
-          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
             {list.map((t) => (
               <li
                 key={t.id}
-                className="overflow-hidden rounded-2xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-1 hover:shadow-soft"
+                className="overflow-hidden rounded-xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-1 hover:shadow-soft md:rounded-2xl"
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-br from-brand-navy-100 to-brand-yellow-100">
                   <Image
                     src={t.photoUrl}
                     alt={`Foto ${t.fullName}`}
                     fill
-                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="p-5">
-                  <h2 className="text-lg font-semibold text-brand-navy">{t.fullName}</h2>
-                  <p className="mt-1 text-sm text-brand-navy-400">{t.subjects.join(' · ')}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-brand-navy-600">{t.shortBio}</p>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="p-3 md:p-5">
+                  <h2 className="text-sm font-semibold leading-tight text-brand-navy md:text-lg">
+                    {t.fullName}
+                  </h2>
+                  <p className="mt-1 line-clamp-1 text-xs text-brand-navy-400 md:line-clamp-none md:text-sm">
+                    {t.subjects.join(' · ')}
+                  </p>
+                  <p className="mt-2 line-clamp-2 text-xs leading-snug text-brand-navy-600 md:mt-3 md:line-clamp-none md:text-sm md:leading-relaxed">
+                    {t.shortBio}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1 md:mt-4 md:gap-1.5">
                     {t.badges.slice(0, 2).map((b) => (
-                      <Badge key={b} variant="muted">
+                      <Badge key={b} variant="muted" className="text-[10px] md:text-xs">
                         {b}
                       </Badge>
                     ))}
-                    <Badge variant="outline">{t.experienceYears}+ tahun</Badge>
+                    <Badge variant="outline" className="text-[10px] md:text-xs">
+                      {t.experienceYears}+ thn
+                    </Badge>
                   </div>
-                  <Button asChild variant="outline" size="sm" className="mt-5 w-full">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="mt-3 w-full px-2 text-xs md:mt-5 md:px-3 md:text-sm"
+                  >
                     <a href={waLinkForTutor(t.fullName)} target="_blank" rel="noopener noreferrer">
-                      Tanya tentang {t.fullName.split(' ')[0]}
+                      Tanya {t.fullName.split(' ')[0]}
                     </a>
                   </Button>
                 </div>
