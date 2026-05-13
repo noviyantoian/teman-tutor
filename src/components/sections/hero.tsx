@@ -2,20 +2,22 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { MathDoodles } from '@/components/illustrations/math-doodles';
+import { EduDoodles } from '@/components/illustrations/edu-doodles';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { siteSettings } from '@/content/site-settings';
 import { buildWaLink } from '@/lib/wa';
 
+// Student studying with tutor — Unsplash by Annie Spratt
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80';
+  'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80';
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-brand-navy via-brand-navy-600 to-brand-navy text-white">
       <div className="bg-grid-navy absolute inset-0 opacity-30" aria-hidden />
-      <MathDoodles className="absolute -left-32 bottom-0 h-[400px] w-[400px] rotate-180 opacity-20" />
+      <EduDoodles className="absolute -left-24 bottom-0 h-[480px] w-[480px] opacity-20" />
+      <EduDoodles className="absolute -right-24 top-0 h-[400px] w-[400px] rotate-180 opacity-15" />
 
       <div className="section container relative">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">

@@ -49,8 +49,8 @@ export function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-sm text-sm text-brand-navy-100">
-            {siteSettings.brandTagline}. Les privat 1-on-1 ke rumah di area Bandung & Cimahi.
-            Mulai dari Rp169.000/sesi.
+            {siteSettings.brandTagline}. Les privat 1-on-1 ke rumah di area Bandung & Cimahi. Mulai
+            dari Rp169.000/sesi.
           </p>
 
           <ul className="mt-6 space-y-3 text-sm text-brand-navy-100">
