@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 218 71% 14%; /* brand-navy */
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 71% 14%;
+
+    --primary: 218 71% 14%; /* navy */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 47 91% 53%; /* yellow */
+    --secondary-foreground: 218 71% 14%;
+
+    --accent: 47 91% 53%;
+    --accent-foreground: 218 71% 14%;
+
+    --muted: 217 33% 95%;
+    --muted-foreground: 218 18% 40%;
+
+    --border: 217 30% 88%;
+    --input: 217 30% 88%;
+    --ring: 47 91% 53%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  ::selection {
+    @apply bg-brand-yellow-200 text-brand-navy;
+  }
+
+  /* Focus rings — high-contrast for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-yellow-500;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply container max-w-5xl;
+  }
+
+  .section {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  .section-tight {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full bg-brand-yellow-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-navy;
+  }
+
+  .heading-display {
+    @apply font-display text-display-1 font-bold text-brand-navy;
+  }
+
+  .balanced {
+    text-wrap: balance;
+  }
+}
+
+/* Subtle grid background helper — used in hero / decorative sections */
+@layer utilities {
+  .bg-grid-navy {
+    background-image:
+      linear-gradient(to right, rgba(10, 30, 61, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 30, 61, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
