@@ -1,4 +1,5 @@
 import { Instagram, Mail, MapPin, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { siteSettings } from '@/content/site-settings';
@@ -38,16 +39,14 @@ export function Footer() {
     <footer className="border-t border-brand-navy-50 bg-brand-navy text-white">
       <div className="container grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 font-display text-xl font-extrabold"
-          >
-            <span className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-navy">
-              t
-            </span>
-            <span>
-              teman <span className="text-brand-yellow-400">tutor</span>
-            </span>
+          <Link href="/" aria-label="Teman Tutor, Beranda" className="inline-flex items-center">
+            <Image
+              src="/images/logo/logo-full-512-light.webp"
+              alt="Teman Tutor"
+              width={180}
+              height={54}
+              className="h-11 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-sm text-sm text-brand-navy-100">
             {siteSettings.brandTagline}. Les privat 1-on-1 ke rumah di area Bandung & Cimahi.

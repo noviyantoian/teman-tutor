@@ -1,6 +1,7 @@
 'use client';
 
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -41,17 +42,15 @@ export function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between md:h-20">
-        <Link
-          href="/"
-          aria-label="Teman Tutor, Beranda"
-          className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight text-brand-navy"
-        >
-          <span className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-navy text-brand-yellow">
-            t
-          </span>
-          <span>
-            teman <span className="text-brand-yellow-500">tutor</span>
-          </span>
+        <Link href="/" aria-label="Teman Tutor, Beranda" className="flex items-center">
+          <Image
+            src="/images/logo/logo-full-512.webp"
+            alt="Teman Tutor"
+            width={140}
+            height={42}
+            priority
+            className="h-9 w-auto md:h-10"
+          />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">

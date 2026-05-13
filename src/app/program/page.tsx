@@ -47,12 +47,11 @@ export default function ProgramPage() {
         <div className="container max-w-3xl text-center">
           <span className="eyebrow">Program & Harga</span>
           <h1 className="balanced mt-4 font-display text-display-2 font-bold text-brand-navy">
-            Program belajar untuk{' '}
-            <span className="text-brand-yellow-500">setiap kebutuhan</span>
+            Program belajar untuk <span className="text-brand-yellow-500">setiap kebutuhan</span>
           </h1>
           <p className="mt-5 text-lg text-brand-navy-600">
-            Dari calistung hingga persiapan PTN, kursus bahasa, dan musik. Semua dengan
-            pendekatan 1-on-1 ke rumah.
+            Dari calistung hingga persiapan PTN, kursus bahasa, dan musik. Semua dengan pendekatan
+            1-on-1 ke rumah.
           </p>
           <p className="mt-3 text-sm text-brand-navy-400">
             * Harga dapat menyesuaikan lokasi, kebutuhan khusus, dan kualifikasi tutor.
@@ -140,8 +139,7 @@ export default function ProgramPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">Paket Bulanan</span>
             <h2 className="mt-4 font-display text-heading-1 font-bold text-brand-navy">
-              Pilih paket sesuai{' '}
-              <span className="text-brand-yellow-500">ritme belajar</span>
+              Pilih paket sesuai <span className="text-brand-yellow-500">ritme belajar</span>
             </h2>
             <p className="mt-3 text-brand-navy-400">
               Jadwal fleksibel, Anda yang tentukan hari & jam.
