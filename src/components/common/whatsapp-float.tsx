@@ -21,14 +21,13 @@ const QUICK_PROMPTS: ReadonlyArray<{ label: string; message: string }> = [
       'Halo Teman Tutor, saya ingin tahu lebih detail soal paket les privat dan harganya. Mohon infonya, terima kasih.',
   },
   {
-    label: 'Konsultasi gratis',
+    label: 'Konsultasi',
     message:
-      'Halo Teman Tutor, saya tertarik untuk konsultasi gratis. Anak saya butuh les privat. Bisa bantu rekomendasi tutor?',
+      'Halo Teman Tutor, saya tertarik untuk konsultasi. Anak saya butuh les privat. Bisa bantu rekomendasi tutor?',
   },
   {
     label: 'Trial 1 sesi',
-    message:
-      'Halo Teman Tutor, saya mau mencoba trial 1 sesi GRATIS untuk anak saya. Bagaimana caranya?',
+    message: 'Halo Teman Tutor, saya mau mencoba trial 1 sesi untuk anak saya. Bagaimana caranya?',
   },
 ];
 

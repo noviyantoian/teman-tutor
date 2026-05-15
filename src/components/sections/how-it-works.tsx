@@ -7,13 +7,13 @@ const HOW_IT_WORKS_IMAGE =
 const STEPS = [
   {
     icon: MessageCircle,
-    title: 'Konsultasi gratis',
+    title: 'Konsultasi',
     description: 'Chat dengan tim kami untuk diskusi kebutuhan & rekomendasi tutor.',
   },
   {
     icon: PlayCircle,
     title: 'Trial 1 sesi',
-    description: 'Coba 1 sesi GRATIS bersama tutor pilihan, tanpa komitmen.',
+    description: 'Coba 1 sesi bersama tutor pilihan, tanpa komitmen.',
   },
   {
     icon: CalendarCheck,
@@ -43,7 +43,7 @@ export function HowItWorksSection() {
               />
             </div>
             <div className="absolute -bottom-5 -right-5 hidden rounded-xl bg-brand-yellow-500 px-5 py-4 font-semibold text-brand-navy shadow-soft-lg md:block">
-              Trial 1 sesi GRATIS
+              Bisa Trial 1 Sesi
             </div>
           </div>
 

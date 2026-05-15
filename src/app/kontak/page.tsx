@@ -8,9 +8,9 @@ import { buildMetadata, breadcrumbJsonLd } from '@/lib/seo';
 import { buildWaLink } from '@/lib/wa';
 
 export const metadata = buildMetadata({
-  title: 'Kontak | Konsultasi Gratis Les Privat Bandung & Cimahi',
+  title: 'Kontak | Konsultasi Les Privat Bandung & Cimahi',
   description:
-    'Isi form konsultasi gratis atau chat WhatsApp Teman Tutor. Tim kami siap rekomendasikan tutor & paket terbaik untuk anak Anda.',
+    'Isi form konsultasi atau chat WhatsApp Teman Tutor. Tim kami siap rekomendasikan tutor & paket terbaik untuk anak Anda.',
   path: '/kontak',
 });
 
@@ -28,11 +28,10 @@ export default function KontakPage() {
         <div className="container max-w-3xl text-center">
           <span className="eyebrow">Kontak</span>
           <h1 className="balanced mt-4 font-display text-display-2 font-bold text-brand-navy">
-            Konsultasi <span className="text-brand-yellow-500">gratis</span>, mulai hari ini
+            Mulai <span className="text-brand-yellow-500">konsultasi</span> hari ini
           </h1>
           <p className="mt-5 text-lg text-brand-navy-600">
-            Isi form di bawah atau chat WhatsApp langsung, kami akan respon dalam jam kerja
-            kami.
+            Isi form di bawah atau chat WhatsApp langsung, kami akan respon dalam jam kerja kami.
           </p>
         </div>
       </section>
@@ -43,9 +42,7 @@ export default function KontakPage() {
             <h2 className="font-display text-heading-2 font-bold text-brand-navy">
               Isi form konsultasi
             </h2>
-            <p className="mt-2 text-sm text-brand-navy-400">
-              * Field wajib diisi.
-            </p>
+            <p className="mt-2 text-sm text-brand-navy-400">* Field wajib diisi.</p>
             <div className="mt-6 rounded-2xl border border-brand-navy-50 bg-white p-6 shadow-soft-sm md:p-8">
               <LeadForm sourcePage="/kontak" />
             </div>

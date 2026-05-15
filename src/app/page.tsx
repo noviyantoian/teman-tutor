@@ -5,7 +5,6 @@ import { HowItWorksSection } from '@/components/sections/how-it-works';
 import { ProgramHighlightsSection } from '@/components/sections/program-highlights';
 import { ServiceAreaSection } from '@/components/sections/service-area';
 import { TestimonialsPreviewSection } from '@/components/sections/testimonials-preview';
-import { TutorPreviewSection } from '@/components/sections/tutor-preview';
 import { ValuePropsSection } from '@/components/sections/value-props';
 
 export default function HomePage() {
@@ -13,9 +12,8 @@ export default function HomePage() {
     <>
       <Hero />
       <ValuePropsSection />
-      <HowItWorksSection />
       <ProgramHighlightsSection />
-      <TutorPreviewSection />
+      <HowItWorksSection />
       <TestimonialsPreviewSection />
       <FaqPreviewSection />
       <ServiceAreaSection />

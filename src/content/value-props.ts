@@ -52,7 +52,7 @@ export const valueProps: ValueProp[] = [
   {
     id: 'vp-9',
     icon: 'PlayCircle',
-    title: 'Trial Gratis',
+    title: 'Bisa Trial 1 Sesi',
     description: 'Coba 1 sesi terlebih dahulu sebelum mengambil paket.',
   },
 ];

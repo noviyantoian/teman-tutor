@@ -65,7 +65,7 @@ export const testimonials: Testimonial[] = [
     id: 'testi-6',
     type: 'text',
     contentText:
-      'Trial sesi yang gratis sangat membantu saya yakin sebelum ambil paket. Tutornya benar-benar punya chemistry dengan anak saya sejak hari pertama.',
+      'Trial 1 sesi sangat membantu saya yakin sebelum ambil paket. Tutornya benar-benar punya chemistry dengan anak saya sejak hari pertama.',
     giverName: 'Pak Hadi',
     giverRole: 'Orang tua siswa SD kelas 2, Cimahi',
     category: 'akademik',

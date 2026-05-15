@@ -7,7 +7,7 @@ import { buildWaLink } from '@/lib/wa';
 
 export const metadata = buildMetadata({
   title: 'Terima Kasih, Konsultasi Anda Telah Diterima',
-  description: 'Tim Teman Tutor akan segera menghubungi Anda untuk konsultasi gratis.',
+  description: 'Tim Teman Tutor akan segera menghubungi Anda untuk konsultasi.',
   path: '/terima-kasih',
   noindex: true,
 });
@@ -24,8 +24,8 @@ export default function TerimaKasihPage() {
           <span className="text-brand-yellow-500">diterima</span>
         </h1>
         <p className="mt-4 text-base text-brand-navy-600">
-          Tim Teman Tutor akan menghubungi Anda dalam waktu maksimal 1×24 jam (jam kerja).
-          Untuk respon lebih cepat, silakan chat WhatsApp kami.
+          Tim Teman Tutor akan menghubungi Anda dalam waktu maksimal 1×24 jam (jam kerja). Untuk
+          respon lebih cepat, silakan chat WhatsApp kami.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button asChild variant="accent" size="lg">

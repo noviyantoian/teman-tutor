@@ -14,12 +14,11 @@ export function CtaSection() {
       <div className="container relative">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="balanced font-display text-display-2 font-bold leading-tight">
-            Mulai perjalanan belajar anak{' '}
-            <span className="text-brand-yellow-500">hari ini</span>
+            Mulai perjalanan belajar anak <span className="text-brand-yellow-500">hari ini</span>
           </h2>
           <p className="mt-4 text-base text-brand-navy-100 md:text-lg">
-            Konsultasi GRATIS tanpa biaya & tanpa komitmen. Kami siap rekomendasikan tutor &
-            paket terbaik untuk anak Anda.
+            Konsultasi tanpa komitmen. Kami siap rekomendasikan tutor & paket terbaik untuk anak
+            Anda.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

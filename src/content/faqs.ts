@@ -33,7 +33,7 @@ export const faqs: Faq[] = [
     category: 'umum',
     question: 'Bisakah saya trial dulu sebelum ambil paket?',
     answer:
-      'Tentu! Kami menyediakan 1 sesi trial GRATIS sebelum Anda memutuskan untuk mengambil paket. Trial ini bertujuan agar anak dan tutor bisa saling menyesuaikan terlebih dahulu.',
+      'Tentu! Kami menyediakan 1 sesi trial sebelum Anda memutuskan untuk mengambil paket. Trial ini bertujuan agar anak dan tutor bisa saling menyesuaikan terlebih dahulu.',
     sortOrder: 4,
     isActive: true,
   },

@@ -41,14 +41,14 @@ export function Hero() {
                   href={buildWaLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chat WhatsApp untuk konsultasi gratis"
+                  aria-label="Chat WhatsApp dengan Teman Tutor"
                 >
                   <MessageCircle className="size-5" /> Chat WhatsApp
                 </a>
               </Button>
               <Button asChild variant="outline-white" size="xl" className="w-full sm:w-auto">
                 <Link href="/kontak">
-                  Konsultasi Gratis <ArrowRight className="size-5" />
+                  Konsultasi Sekarang <ArrowRight className="size-5" />
                 </Link>
               </Button>
             </div>

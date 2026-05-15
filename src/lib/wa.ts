@@ -17,7 +17,7 @@ export function buildWaLink(opts?: { messageOverride?: string; contextSuffix?: s
  */
 export function waLinkForProgram(programName: string): string {
   return buildWaLink({
-    messageOverride: `Halo Teman Tutor, saya tertarik dengan program ${programName} dan ingin konsultasi gratis.`,
+    messageOverride: `Halo Teman Tutor, saya tertarik dengan program ${programName} dan ingin konsultasi.`,
   });
 }
 

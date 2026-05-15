@@ -12,7 +12,6 @@ import { cn } from '@/lib/utils';
 const NAV_LINKS = [
   { href: '/tentang', label: 'Tentang' },
   { href: '/program', label: 'Program' },
-  { href: '/tutor', label: 'Tutor' },
   { href: '/testimoni', label: 'Testimoni' },
   { href: '/faq', label: 'FAQ' },
 ] as const;
@@ -75,7 +74,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <Button asChild variant="accent" size="md" className="hidden md:inline-flex">
-            <Link href="/kontak">Konsultasi Gratis</Link>
+            <Link href="/kontak">Konsultasi</Link>
           </Button>
           <button
             type="button"
@@ -106,7 +105,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild variant="accent" size="lg" className="mt-2">
-              <Link href="/kontak">Konsultasi Gratis</Link>
+              <Link href="/kontak">Konsultasi</Link>
             </Button>
           </nav>
         </div>

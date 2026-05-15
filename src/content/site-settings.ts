@@ -6,8 +6,7 @@ import type { SiteSettings } from '@/types';
  */
 export const siteSettings: SiteSettings = {
   waNumber: '6281234567890', // ⚠️ Ganti dengan nomor WA resmi
-  waDefaultMessage:
-    'Halo Teman Tutor, saya ingin konsultasi gratis untuk les privat anak saya.',
+  waDefaultMessage: 'Halo Teman Tutor, saya ingin konsultasi untuk les privat anak saya.',
   email: 'admin@temantutor.id',
   instagramUrl: 'https://instagram.com/temantutor.id',
   tiktokUrl: undefined,
@@ -20,7 +19,7 @@ export const siteSettings: SiteSettings = {
     'Teman Tutor hadir sebagai teman belajar, teman bertumbuh untuk setiap anak. Tatap muka langsung ke rumah di area Bandung & Cimahi.',
   heroTrustBadges: [
     'Mulai Rp169rb/sesi',
-    'Gratis Trial 1 Sesi',
+    'Bisa Trial 1 Sesi',
     'Gratis Ongkos Transport',
     'Tanpa Biaya Pendaftaran',
   ],
