@@ -11,7 +11,6 @@ const NAV_GROUPS = [
     links: [
       { href: '/tentang', label: 'Tentang Kami' },
       { href: '/program', label: 'Program & Harga' },
-      { href: '/tutor', label: 'Tutor' },
       { href: '/testimoni', label: 'Testimoni' },
       { href: '/faq', label: 'FAQ' },
     ],
