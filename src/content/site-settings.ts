@@ -5,7 +5,7 @@ import type { SiteSettings } from '@/types';
  * Override sensitive values (wa number, etc.) via env at runtime.
  */
 export const siteSettings: SiteSettings = {
-  waNumber: '6281234567890', // ⚠️ Ganti dengan nomor WA resmi
+  waNumber: '6281180892201',
   waDefaultMessage: 'Halo Teman Tutor, saya ingin konsultasi untuk les privat anak saya.',
   email: 'admin@temantutor.id',
   instagramUrl: 'https://instagram.com/temantutor.id',
