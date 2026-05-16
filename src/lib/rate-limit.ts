@@ -1,9 +1,9 @@
 /**
  * Minimal in-memory token bucket rate limiter.
  *
- * NOTE: This is per-instance memory. On Vercel serverless it's per-cold-start.
- * Good enough for fase 1 MVP to deter casual spam. Upgrade to Upstash Redis
- * (or Vercel KV) when traffic > ~1k unique IPs/day.
+ * NOTE: Cloudflare Workers are stateless — in-memory state resets per isolate.
+ * This still deters same-isolate spam within a single request burst.
+ * Upgrade to Cloudflare KV or Upstash Redis when traffic > ~1k unique IPs/day.
  */
 
 type Bucket = { count: number; resetAt: number };

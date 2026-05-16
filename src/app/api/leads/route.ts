@@ -3,8 +3,6 @@ import { NextResponse } from 'next/server';
 import { rateLimit } from '@/lib/rate-limit';
 import { leadFormSchema } from '@/lib/validation';
 
-// Use Node runtime, Resend SDK needs Node primitives, not edge.
-export const runtime = 'nodejs';
 // Never cache this endpoint.
 export const dynamic = 'force-dynamic';
 
