@@ -3,16 +3,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { MessageCircle, Send, X } from 'lucide-react';
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { siteSettings } from '@/content/site-settings';
 import { trackWhatsAppClick } from '@/lib/analytics';
 import { buildWaLink } from '@/lib/wa';
-
-type Props = {
-  source?: string;
-};
 
 const QUICK_PROMPTS: ReadonlyArray<{ label: string; message: string }> = [
   {
@@ -25,17 +22,18 @@ const QUICK_PROMPTS: ReadonlyArray<{ label: string; message: string }> = [
     message:
       'Halo Teman Tutor, saya tertarik untuk konsultasi. Anak saya butuh les privat. Bisa bantu rekomendasi tutor?',
   },
-  {
-    label: 'Trial 1 sesi',
-    message: 'Halo Teman Tutor, saya mau mencoba trial 1 sesi untuk anak saya. Bagaimana caranya?',
-  },
 ];
 
+type WhatsAppDialogProps = {
+  source?: string;
+  children: ReactNode;
+};
+
 /**
- * Floating WhatsApp CTA. Opens a dialog so user can compose a message,
- * then redirects to WhatsApp with the message pre-filled.
+ * Shared WhatsApp dialog. Renders a form to compose a message and opens
+ * WhatsApp pre-filled when submitted. Accepts a custom trigger via children.
  */
-export function WhatsAppFloat({ source = 'float' }: Props) {
+export function WhatsAppDialog({ source = 'float', children }: WhatsAppDialogProps) {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState(siteSettings.waDefaultMessage);
 
@@ -50,17 +48,7 @@ export function WhatsAppFloat({ source = 'float' }: Props) {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild>
-        <button
-          type="button"
-          aria-label="Chat WhatsApp Teman Tutor"
-          className="group fixed bottom-20 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft-lg transition-transform hover:scale-105 focus-visible:scale-105 md:bottom-6 md:right-6 md:h-16 md:w-16"
-        >
-          <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-20" />
-          <MessageCircle className="size-7 md:size-8" strokeWidth={2.25} />
-          <span className="sr-only">Chat WhatsApp</span>
-        </button>
-      </Dialog.Trigger>
+      <Dialog.Trigger asChild>{children}</Dialog.Trigger>
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-brand-navy/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
@@ -138,5 +126,25 @@ export function WhatsAppFloat({ source = 'float' }: Props) {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+  );
+}
+
+/**
+ * Desktop-only floating WhatsApp CTA. Hidden on mobile because the
+ * sticky mobile CTA bar already exposes the same dialog.
+ */
+export function WhatsAppFloat() {
+  return (
+    <WhatsAppDialog source="float">
+      <button
+        type="button"
+        aria-label="Chat WhatsApp Teman Tutor"
+        className="group fixed bottom-6 right-6 z-40 hidden h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft-lg transition-transform hover:scale-105 focus-visible:scale-105 md:flex"
+      >
+        <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-20" />
+        <MessageCircle className="size-8" strokeWidth={2.25} />
+        <span className="sr-only">Chat WhatsApp</span>
+      </button>
+    </WhatsAppDialog>
   );
 }
