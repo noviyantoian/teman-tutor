@@ -1,7 +1,8 @@
 'use client';
 
 import { CheckCircle2, Search, SlidersHorizontal, X } from 'lucide-react';
-import Image from 'next/image';
+import * as Icons from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -15,18 +16,16 @@ type SortKey = 'default' | 'price-asc' | 'price-desc';
 
 const CATEGORIES: ProgramCategory[] = ['akademik', 'persiapan-khusus', 'skill', 'musik'];
 
-const CATEGORY_IMAGE: Record<ProgramCategory, string> = {
-  akademik: '/images/category/akademik.jpeg',
-  'persiapan-khusus': '/images/category/persipan-khsusu.jpeg',
-  skill: '/images/category/bahasa.jpeg',
-  musik: '/images/category/musik.jpeg',
-};
-
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'default', label: 'Paling Relevan' },
   { value: 'price-asc', label: 'Harga Terendah' },
   { value: 'price-desc', label: 'Harga Tertinggi' },
 ];
+
+function pickIcon(name: string): LucideIcon {
+  const I = (Icons as unknown as Record<string, LucideIcon>)[name];
+  return I ?? Icons.BookOpen;
+}
 
 type Props = {
   programs: Program[];
@@ -236,37 +235,33 @@ export function ProgramMarketplace({ programs }: Props) {
                 </Button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {filtered.map((p) => (
-                  <article
-                    key={p.id}
-                    className="group flex flex-col overflow-hidden rounded-2xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-0.5 hover:shadow-soft"
-                  >
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-navy-50">
-                      <Image
-                        src={CATEGORY_IMAGE[p.category]}
-                        alt={programCategoryLabel[p.category]}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/30 via-transparent to-transparent" />
-                      <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-brand-navy shadow-soft-sm backdrop-blur">
-                        {programCategoryLabel[p.category]}
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col p-5">
-                      <h3 className="flex min-h-[2.5rem] items-center text-base font-semibold leading-tight text-brand-navy">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3">
+                {filtered.map((p) => {
+                  const Icon = pickIcon(p.icon);
+                  return (
+                    <article
+                      key={p.id}
+                      className="flex flex-col rounded-2xl border border-brand-navy-50 bg-white p-4 shadow-soft-sm transition-all hover:-translate-y-0.5 hover:shadow-soft sm:p-5"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-yellow-100 text-brand-navy sm:size-11">
+                          <Icon className="size-5" aria-hidden />
+                        </div>
+                        <span className="rounded-full bg-brand-navy-50 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-navy-600 sm:px-2.5 sm:text-[10px]">
+                          {programCategoryLabel[p.category]}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 flex min-h-[2.5rem] items-center text-sm font-semibold leading-tight text-brand-navy sm:text-base">
                         <span className="line-clamp-2">{p.name}</span>
                       </h3>
-                      <p className="mt-1.5 flex min-h-[2.5rem] items-center text-sm text-brand-navy-400">
+                      <p className="mt-1.5 flex min-h-[2.5rem] items-center text-xs text-brand-navy-400 sm:text-sm">
                         <span className="line-clamp-2">{p.description}</span>
                       </p>
-                      <ul className="mt-3 flex min-h-[3.5rem] flex-col justify-center space-y-1">
+                      <ul className="mt-3 flex min-h-[3.5rem] flex-col justify-center space-y-1 pb-2">
                         {p.subjects.slice(0, 3).map((s) => (
                           <li
                             key={s}
-                            className="flex items-center gap-2 text-xs text-brand-navy-600"
+                            className="flex items-center gap-2 text-[11px] text-brand-navy-600 sm:text-xs"
                           >
                             <CheckCircle2
                               className="size-3.5 shrink-0 text-brand-yellow-500"
@@ -276,17 +271,17 @@ export function ProgramMarketplace({ programs }: Props) {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-auto flex items-end justify-between gap-3 border-t border-brand-navy-50 pt-4">
+                      <div className="mt-auto flex flex-col items-stretch gap-3 pt-4 sm:flex-row sm:items-end sm:justify-between">
                         <div>
-                          <p className="text-[11px] text-brand-navy-400">Mulai dari</p>
-                          <p className="text-lg font-bold leading-tight text-brand-navy">
+                          <p className="text-[10px] text-brand-navy-400 sm:text-[11px]">Mulai dari</p>
+                          <p className="text-base font-bold leading-tight text-brand-navy sm:text-lg">
                             {formatIDR(p.priceFrom)}
                           </p>
                           <p className="text-[10px] text-brand-navy-400">
                             / {p.sessionDurationMinutes} menit
                           </p>
                         </div>
-                        <Button asChild variant="accent" size="sm">
+                        <Button asChild variant="accent" size="sm" className="w-full sm:w-auto">
                           <a
                             href={waLinkForProgram(p.name)}
                             target="_blank"
@@ -296,9 +291,9 @@ export function ProgramMarketplace({ programs }: Props) {
                           </a>
                         </Button>
                       </div>
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
             )}
           </div>
