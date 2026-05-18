@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { JsonLd } from '@/components/common/json-ld';
 import { CtaSection } from '@/components/sections/cta-section';
+import { ProgramCategoryPills } from '@/components/sections/program-category-pills';
 import { ProgramMarketplace } from '@/components/sections/program-marketplace';
 import { Badge } from '@/components/ui/badge';
 import { packages } from '@/content/packages';
@@ -46,6 +47,8 @@ export default function ProgramPage() {
           </p>
         </div>
       </section>
+
+      <ProgramCategoryPills />
 
       <Suspense fallback={null}>
         <ProgramMarketplace programs={programs} />
