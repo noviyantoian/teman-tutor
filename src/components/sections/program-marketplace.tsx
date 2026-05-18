@@ -251,13 +251,13 @@ export function ProgramMarketplace({ programs }: Props) {
                           {programCategoryLabel[p.category]}
                         </span>
                       </div>
-                      <h3 className="mt-4 line-clamp-2 min-h-[2.5rem] text-base font-semibold leading-tight text-brand-navy">
-                        {p.name}
+                      <h3 className="mt-4 flex min-h-[2.5rem] items-center text-base font-semibold leading-tight text-brand-navy">
+                        <span className="line-clamp-2">{p.name}</span>
                       </h3>
-                      <p className="mt-1.5 line-clamp-2 min-h-[2.5rem] text-sm text-brand-navy-400">
-                        {p.description}
+                      <p className="mt-1.5 flex min-h-[2.5rem] items-center text-sm text-brand-navy-400">
+                        <span className="line-clamp-2">{p.description}</span>
                       </p>
-                      <ul className="mt-3 min-h-[4.5rem] space-y-1">
+                      <ul className="mt-3 flex min-h-[3.5rem] flex-col justify-center space-y-1">
                         {p.subjects.slice(0, 3).map((s) => (
                           <li
                             key={s}
