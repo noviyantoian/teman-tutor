@@ -273,7 +273,9 @@ export function ProgramMarketplace({ programs }: Props) {
                       </ul>
                       <div className="mt-auto flex flex-col items-stretch gap-3 pt-4 sm:flex-row sm:items-end sm:justify-between">
                         <div>
-                          <p className="text-[10px] text-brand-navy-400 sm:text-[11px]">Mulai dari</p>
+                          <p className="text-[10px] text-brand-navy-400 sm:text-[11px]">
+                            Mulai dari
+                          </p>
                           <p className="text-base font-bold leading-tight text-brand-navy sm:text-lg">
                             {formatIDR(p.priceFrom)}
                           </p>

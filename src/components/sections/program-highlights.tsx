@@ -11,10 +11,10 @@ import type { ProgramCategory } from '@/types';
 const CATEGORY_ORDER: ProgramCategory[] = ['akademik', 'persiapan-khusus', 'skill', 'musik'];
 
 const CATEGORY_IMAGE: Record<ProgramCategory, string> = {
-  akademik: '/images/category/akademik.jpeg',
-  'persiapan-khusus': '/images/category/persipan-khsusu.jpeg',
-  skill: '/images/category/bahasa.jpeg',
-  musik: '/images/category/musik.jpeg',
+  akademik: '/images/category/akademik.webp',
+  'persiapan-khusus': '/images/category/persipan-khsusu.webp',
+  skill: '/images/category/bahasa.webp',
+  musik: '/images/category/musik.webp',
 };
 
 export function ProgramHighlightsSection() {

@@ -8,9 +8,8 @@ import { Button } from '@/components/ui/button';
 import { siteSettings } from '@/content/site-settings';
 import { buildWaLink } from '@/lib/wa';
 
-// Student studying with tutor — Unsplash by Annie Spratt
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80';
+// Self-hosted hero image (originally from Unsplash by Annie Spratt)
+const HERO_IMAGE = '/images/hero/hero-tutoring.webp';
 
 export function Hero() {
   return (
@@ -71,6 +70,7 @@ export function Hero() {
                 alt="Anak belajar dengan fokus didampingi tutor di rumah"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 1024px) 40vw, 0px"
                 className="object-cover"
               />
