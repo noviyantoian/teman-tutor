@@ -1,3 +1,4 @@
+import { siteSettings } from '@/content/site-settings';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
@@ -50,7 +51,7 @@ export default function TermsPage() {
         <h2>6. Kontak</h2>
         <p>
           Pertanyaan terkait syarat & ketentuan dapat dikirim ke{' '}
-          <a href="mailto:admin@temantutor.id">admin@temantutor.id</a>.
+          <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a>.
         </p>
       </div>
     </article>
