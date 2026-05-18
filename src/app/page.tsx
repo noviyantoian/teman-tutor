@@ -12,10 +12,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <StatsSection />
       <ValuePropsSection />
       <ProgramHighlightsSection />
       <HowItWorksSection />
+      <StatsSection />
       <TestimonialsPreviewSection />
       <FaqPreviewSection />
       <ServiceAreaSection />
