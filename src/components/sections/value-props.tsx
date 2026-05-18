@@ -1,12 +1,8 @@
-'use client';
-
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { useState } from 'react';
 
+import { ValuePropsCollapse } from '@/components/sections/value-props-collapse';
 import { valueProps } from '@/content/value-props';
-import { cn } from '@/lib/utils';
 
 function getIcon(name: string): LucideIcon {
   const I = (Icons as unknown as Record<string, LucideIcon>)[name];
@@ -14,7 +10,6 @@ function getIcon(name: string): LucideIcon {
 }
 
 export function ValuePropsSection() {
-  const [expanded, setExpanded] = useState(false);
   const hiddenCount = Math.max(valueProps.length - 4, 0);
 
   return (
@@ -30,12 +25,7 @@ export function ValuePropsSection() {
           </p>
         </div>
 
-        <div
-          className={cn(
-            'relative mt-8 md:mt-12',
-            !expanded && 'max-h-[22rem] overflow-hidden md:max-h-none md:overflow-visible',
-          )}
-        >
+        <ValuePropsCollapse hiddenCount={hiddenCount}>
           <ul className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
             {valueProps.map((v) => {
               const Icon = getIcon(v.icon);
@@ -57,37 +47,7 @@ export function ValuePropsSection() {
               );
             })}
           </ul>
-
-          {!expanded ? (
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/90 to-transparent md:hidden"
-            />
-          ) : null}
-        </div>
-
-        {hiddenCount > 0 ? (
-          <div className="mt-4 flex justify-center md:hidden">
-            <button
-              type="button"
-              onClick={() => setExpanded((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-full border border-brand-navy-100 bg-white px-5 py-2.5 text-sm font-semibold text-brand-navy shadow-soft-sm transition-all hover:border-brand-yellow-300 hover:shadow-soft active:scale-95"
-              aria-expanded={expanded}
-            >
-              {expanded ? (
-                <>
-                  Sembunyikan
-                  <ChevronUp className="size-4" aria-hidden />
-                </>
-              ) : (
-                <>
-                  Lihat {hiddenCount} benefit lainnya
-                  <ChevronDown className="size-4" aria-hidden />
-                </>
-              )}
-            </button>
-          </div>
-        ) : null}
+        </ValuePropsCollapse>
       </div>
     </section>
   );

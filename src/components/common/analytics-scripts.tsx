@@ -20,10 +20,10 @@ export function AnalyticsScripts() {
         <>
           <Script
             id="ga-loader"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
           />
-          <Script id="ga-init" strategy="afterInteractive">
+          <Script id="ga-init" strategy="lazyOnload">
             {`window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -33,7 +33,7 @@ export function AnalyticsScripts() {
       ) : null}
 
       {metaId ? (
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -48,7 +48,7 @@ export function AnalyticsScripts() {
       ) : null}
 
       {clarityId ? (
-        <Script id="clarity-init" strategy="afterInteractive">
+        <Script id="clarity-init" strategy="lazyOnload">
           {`(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
