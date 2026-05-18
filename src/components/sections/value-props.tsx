@@ -1,12 +1,33 @@
-import * as Icons from 'lucide-react';
+import {
+  BadgePercent,
+  GraduationCap,
+  Home,
+  LineChart,
+  PlayCircle,
+  ShieldCheck,
+  Sparkles,
+  Truck,
+  Users,
+} from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { ValuePropsCollapse } from '@/components/sections/value-props-collapse';
 import { valueProps } from '@/content/value-props';
 
+const ICON_MAP: Record<string, LucideIcon> = {
+  Users,
+  GraduationCap,
+  Sparkles,
+  Home,
+  LineChart,
+  BadgePercent,
+  Truck,
+  ShieldCheck,
+  PlayCircle,
+};
+
 function getIcon(name: string): LucideIcon {
-  const I = (Icons as unknown as Record<string, LucideIcon>)[name];
-  return I ?? Icons.Sparkles;
+  return ICON_MAP[name] ?? Sparkles;
 }
 
 export function ValuePropsSection() {

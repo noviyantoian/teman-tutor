@@ -1,11 +1,17 @@
-import * as Icons from 'lucide-react';
+import { Sparkles, Star, ThumbsUp, UserCheck, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { stats } from '@/content/stats';
 
+const ICON_MAP: Record<string, LucideIcon> = {
+  Users,
+  UserCheck,
+  ThumbsUp,
+  Star,
+};
+
 function pickIcon(name: string): LucideIcon {
-  const I = (Icons as unknown as Record<string, LucideIcon>)[name];
-  return I ?? Icons.Sparkles;
+  return ICON_MAP[name] ?? Sparkles;
 }
 
 export function StatsSection() {

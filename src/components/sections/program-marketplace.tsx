@@ -1,7 +1,25 @@
 'use client';
 
-import { CheckCircle2, Search, SlidersHorizontal, X } from 'lucide-react';
-import * as Icons from 'lucide-react';
+import {
+  BookMarked,
+  BookOpen,
+  CheckCircle2,
+  Crosshair,
+  Globe2,
+  GraduationCap,
+  Guitar,
+  Languages,
+  Medal,
+  Mic,
+  Music2,
+  PencilRuler,
+  Piano,
+  Plane,
+  Search,
+  ShieldCheck,
+  SlidersHorizontal,
+  X,
+} from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
@@ -22,9 +40,25 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'price-desc', label: 'Harga Tertinggi' },
 ];
 
+const ICON_MAP: Record<string, LucideIcon> = {
+  PencilRuler,
+  BookOpen,
+  BookMarked,
+  GraduationCap,
+  Crosshair,
+  ShieldCheck,
+  Medal,
+  Globe2,
+  Plane,
+  Languages,
+  Piano,
+  Guitar,
+  Music2,
+  Mic,
+};
+
 function pickIcon(name: string): LucideIcon {
-  const I = (Icons as unknown as Record<string, LucideIcon>)[name];
-  return I ?? Icons.BookOpen;
+  return ICON_MAP[name] ?? BookOpen;
 }
 
 type Props = {
