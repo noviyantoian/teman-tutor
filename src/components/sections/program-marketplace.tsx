@@ -41,9 +41,9 @@ export function ProgramMarketplace({ programs }: Props) {
   useEffect(() => {
     const raw = searchParams.get('kategori');
     if (!raw) return;
-    const requested = raw.split(',').filter((c): c is ProgramCategory =>
-      CATEGORIES.includes(c as ProgramCategory),
-    );
+    const requested = raw
+      .split(',')
+      .filter((c): c is ProgramCategory => CATEGORIES.includes(c as ProgramCategory));
     if (requested.length > 0) {
       setSelectedCategories(requested);
     }
@@ -251,13 +251,13 @@ export function ProgramMarketplace({ programs }: Props) {
                           {programCategoryLabel[p.category]}
                         </span>
                       </div>
-                      <h3 className="mt-4 text-base font-semibold leading-tight text-brand-navy">
+                      <h3 className="mt-4 line-clamp-2 min-h-[2.5rem] text-base font-semibold leading-tight text-brand-navy">
                         {p.name}
                       </h3>
-                      <p className="mt-1.5 line-clamp-2 text-sm text-brand-navy-400">
+                      <p className="mt-1.5 line-clamp-2 min-h-[2.5rem] text-sm text-brand-navy-400">
                         {p.description}
                       </p>
-                      <ul className="mt-3 space-y-1">
+                      <ul className="mt-3 min-h-[4.5rem] space-y-1">
                         {p.subjects.slice(0, 3).map((s) => (
                           <li
                             key={s}
