@@ -48,22 +48,22 @@ export function ProgramCategoryPills() {
           <span className="text-xs text-brand-navy-400">Geser ke kanan</span>
         </div>
         <div className="-mx-4 overflow-x-auto pb-2">
-          <ul className="flex gap-3 px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ul className="flex items-stretch gap-3 px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {PILLS.map((p) => {
               const Icon = p.icon;
               const count = programs.filter(
                 (prog) => prog.category === p.key && prog.isActive,
               ).length;
               return (
-                <li key={p.key} className="shrink-0">
+                <li key={p.key} className="flex shrink-0">
                   <Link
                     href={`/program?kategori=${p.key}#marketplace`}
-                    className={`group flex w-36 flex-col gap-2 rounded-2xl bg-gradient-to-br ${p.accent} p-4 shadow-soft-sm transition-all active:scale-95`}
+                    className={`group flex h-full w-36 flex-col gap-2 rounded-2xl bg-gradient-to-br ${p.accent} p-4 shadow-soft-sm transition-all active:scale-95`}
                   >
                     <div className="inline-flex size-10 items-center justify-center rounded-xl bg-white/80 shadow-soft-sm">
                       <Icon className={`size-5 ${p.iconColor}`} aria-hidden />
                     </div>
-                    <div>
+                    <div className="mt-auto">
                       <p className="text-sm font-semibold leading-tight text-brand-navy">
                         {programCategoryLabel[p.key]}
                       </p>
