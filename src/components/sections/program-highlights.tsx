@@ -1,6 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import * as Icons from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
@@ -11,10 +10,12 @@ import type { ProgramCategory } from '@/types';
 
 const CATEGORY_ORDER: ProgramCategory[] = ['akademik', 'persiapan-khusus', 'skill', 'musik'];
 
-function pickIcon(name: string): LucideIcon {
-  const I = (Icons as unknown as Record<string, LucideIcon>)[name];
-  return I ?? Icons.BookOpen;
-}
+const CATEGORY_IMAGE: Record<ProgramCategory, string> = {
+  akademik: '/images/category/akademik.jpeg',
+  'persiapan-khusus': '/images/category/persipan-khsusu.jpeg',
+  skill: '/images/category/bahasa.jpeg',
+  musik: '/images/category/musik.jpeg',
+};
 
 export function ProgramHighlightsSection() {
   return (
@@ -34,41 +35,49 @@ export function ProgramHighlightsSection() {
           {CATEGORY_ORDER.map((cat) => {
             const sample = programs.filter((p) => p.category === cat && p.isActive)[0];
             if (!sample) return null;
-            const Icon = pickIcon(sample.icon);
             return (
               <article
                 key={cat}
-                className="group flex flex-col rounded-xl border border-brand-navy-50 bg-white p-4 shadow-soft-sm transition-all hover:-translate-y-1 hover:border-brand-yellow-300 hover:shadow-soft sm:p-5 md:rounded-2xl md:p-6"
+                className="group flex flex-col overflow-hidden rounded-xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-1 hover:border-brand-yellow-300 hover:shadow-soft md:rounded-2xl"
               >
-                <div className="inline-flex size-10 items-center justify-center rounded-lg bg-brand-yellow-100 text-brand-navy md:size-12 md:rounded-xl">
-                  <Icon className="size-5 md:size-6" aria-hidden />
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-navy-50">
+                  <Image
+                    src={CATEGORY_IMAGE[cat]}
+                    alt={programCategoryLabel[cat]}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-brand-navy/0 to-transparent" />
                 </div>
-                <h3 className="mt-3 text-base font-semibold leading-tight text-brand-navy md:mt-4 md:text-xl">
-                  {programCategoryLabel[cat]}
-                </h3>
-                <p className="mt-1 line-clamp-2 text-xs text-brand-navy-400 md:line-clamp-none md:text-sm">
-                  {programs
-                    .filter((p) => p.category === cat)
-                    .slice(0, 3)
-                    .map((p) => p.name)
-                    .join(', ')}
-                  {programs.filter((p) => p.category === cat).length > 3 ? '…' : ''}
-                </p>
-                <div className="mt-3 flex items-center justify-between md:mt-4">
-                  <Badge variant="muted" className="text-[11px] md:text-xs">
-                    Mulai {formatIDR(sample.priceFrom)}
-                  </Badge>
+                <div className="flex flex-1 flex-col p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base font-semibold leading-tight text-brand-navy md:text-xl">
+                    {programCategoryLabel[cat]}
+                  </h3>
+                  <p className="mt-1 line-clamp-2 text-xs text-brand-navy-400 md:line-clamp-none md:text-sm">
+                    {programs
+                      .filter((p) => p.category === cat)
+                      .slice(0, 3)
+                      .map((p) => p.name)
+                      .join(', ')}
+                    {programs.filter((p) => p.category === cat).length > 3 ? '…' : ''}
+                  </p>
+                  <div className="mt-3 flex items-center justify-between md:mt-4">
+                    <Badge variant="muted" className="text-[11px] md:text-xs">
+                      Mulai {formatIDR(sample.priceFrom)}
+                    </Badge>
+                  </div>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    size="sm"
+                    className="mt-auto self-start px-2 pt-4 text-xs md:px-3 md:pt-6 md:text-sm"
+                  >
+                    <Link href={`/program?kategori=${cat}#marketplace`}>
+                      Lihat detail <ArrowRight className="size-3.5 md:size-4" />
+                    </Link>
+                  </Button>
                 </div>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="sm"
-                  className="mt-4 self-start px-2 text-xs md:mt-6 md:px-3 md:text-sm"
-                >
-                  <Link href={`/program?kategori=${cat}#marketplace`}>
-                    Lihat detail <ArrowRight className="size-3.5 md:size-4" />
-                  </Link>
-                </Button>
               </article>
             );
           })}
