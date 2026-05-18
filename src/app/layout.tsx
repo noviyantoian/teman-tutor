@@ -33,19 +33,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'Teman Tutor | Les Privat ke Rumah Bandung & Cimahi',
+    title: 'Teman Tutor | Les Privat 1-on-1 ke Rumah, Tutor Terpercaya',
     description:
-      'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, kursus bahasa & musik di Bandung & Cimahi. Tutor terseleksi, mulai Rp169.000/sesi, bisa trial 1 sesi.',
+      'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp169.000/sesi. Hadir di Bandung & Cimahi, segera di kota lainnya.',
     path: '/',
     keywords: [
+      'les privat',
+      'les privat ke rumah',
+      'les privat 1-on-1',
+      'tutor privat',
+      'tutor ke rumah',
+      'les SD',
+      'les SMP',
+      'les SMA',
+      'les matematika',
+      'les bahasa Inggris',
+      'persiapan SNBT',
+      'kursus musik',
       'les privat Bandung',
       'les privat Cimahi',
-      'les privat ke rumah',
-      'tutor SD Bandung',
-      'tutor SMP Bandung',
-      'tutor SMA Bandung',
-      'les matematika Bandung',
-      'persiapan SNBT Bandung',
     ],
   }),
   verification: {
