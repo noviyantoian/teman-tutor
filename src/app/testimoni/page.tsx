@@ -1,11 +1,12 @@
 import { Quote } from 'lucide-react';
+import Image from 'next/image';
 
 import { JsonLd } from '@/components/common/json-ld';
 import { CtaSection } from '@/components/sections/cta-section';
 import { Badge } from '@/components/ui/badge';
+import { programCategoryLabel } from '@/content/programs';
 import { testimonials } from '@/content/testimonials';
 import { buildMetadata, breadcrumbJsonLd } from '@/lib/seo';
-import { programCategoryLabel } from '@/content/programs';
 
 export const metadata = buildMetadata({
   title: 'Testimoni | Cerita Murid & Orang Tua Teman Tutor',
@@ -44,22 +45,47 @@ export default function TestimoniPage() {
             {items.map((t) => (
               <li
                 key={t.id}
-                className="relative rounded-2xl border border-brand-navy-50 bg-brand-navy-50/40 p-7 shadow-soft-sm"
+                className="overflow-hidden rounded-2xl border border-brand-navy-50 bg-brand-navy-50/40 shadow-soft-sm"
               >
-                <Quote
-                  aria-hidden
-                  className="absolute right-6 top-6 size-10 text-brand-yellow-300"
-                />
-                <Badge variant="muted" className="mb-4">
-                  {programCategoryLabel[t.category]}
-                </Badge>
-                <p className="text-base leading-relaxed text-brand-navy">{t.contentText}</p>
-                <div className="mt-6 border-t border-brand-navy-100 pt-4">
-                  <p className="text-sm font-semibold text-brand-navy">{t.giverName}</p>
-                  {t.giverRole ? (
-                    <p className="text-xs text-brand-navy-400">{t.giverRole}</p>
-                  ) : null}
-                </div>
+                {t.type === 'screenshot' && t.mediaUrl ? (
+                  <>
+                    <div className="relative aspect-[3/4] overflow-hidden">
+                      <Image
+                        src={t.mediaUrl}
+                        alt={t.contentText ?? `Testimoni dari ${t.giverName}`}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      />
+                    </div>
+                    <div className="border-t border-brand-navy-100 p-5">
+                      <Badge variant="muted" className="mb-3">
+                        {programCategoryLabel[t.category]}
+                      </Badge>
+                      <p className="text-sm font-semibold text-brand-navy">{t.giverName}</p>
+                      {t.giverRole ? (
+                        <p className="text-xs text-brand-navy-400">{t.giverRole}</p>
+                      ) : null}
+                    </div>
+                  </>
+                ) : (
+                  <div className="relative p-7">
+                    <Quote
+                      aria-hidden
+                      className="absolute right-6 top-6 size-10 text-brand-yellow-300"
+                    />
+                    <Badge variant="muted" className="mb-4">
+                      {programCategoryLabel[t.category]}
+                    </Badge>
+                    <p className="text-base leading-relaxed text-brand-navy">{t.contentText}</p>
+                    <div className="mt-6 border-t border-brand-navy-100 pt-4">
+                      <p className="text-sm font-semibold text-brand-navy">{t.giverName}</p>
+                      {t.giverRole ? (
+                        <p className="text-xs text-brand-navy-400">{t.giverRole}</p>
+                      ) : null}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
