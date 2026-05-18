@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Instagram, Mail, MapPin, MessageCircle, Clock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -74,6 +74,10 @@ export function Footer() {
                 Chat WhatsApp
               </a>
             </li>
+            <li className="flex items-start gap-3">
+              <Clock className="mt-0.5 size-4 shrink-0 text-brand-yellow-400" />
+              <span>{siteSettings.responseHours}</span>
+            </li>
           </ul>
         </div>
 
@@ -95,23 +99,24 @@ export function Footer() {
           </div>
         ))}
 
-        <div className="md:col-span-2">
-          <h3 className="text-sm font-semibold text-white">Ikuti Kami</h3>
-          <div className="mt-4 flex gap-2">
-            {siteSettings.instagramUrl ? (
-              <a
-                href={siteSettings.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="inline-flex size-10 items-center justify-center rounded-md bg-brand-navy-600 transition-colors hover:bg-brand-navy-400"
-              >
-                <Instagram className="size-4" />
-              </a>
-            ) : null}
+        {siteSettings.instagramUrl || siteSettings.tiktokUrl || siteSettings.youtubeUrl ? (
+          <div className="md:col-span-2">
+            <h3 className="text-sm font-semibold text-white">Ikuti Kami</h3>
+            <div className="mt-4 flex gap-2">
+              {siteSettings.instagramUrl ? (
+                <a
+                  href={siteSettings.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex size-10 items-center justify-center rounded-md bg-brand-navy-600 transition-colors hover:bg-brand-navy-400"
+                >
+                  <Instagram className="size-4" />
+                </a>
+              ) : null}
+            </div>
           </div>
-          <p className="mt-6 text-xs text-brand-navy-200">{siteSettings.responseHours}</p>
-        </div>
+        ) : null}
       </div>
 
       <div className="border-t border-brand-navy-600">

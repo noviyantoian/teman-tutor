@@ -105,7 +105,7 @@ export const faqs: Faq[] = [
     category: 'umum',
     question: 'Bagaimana cara mulai konsultasi?',
     answer:
-      'Cukup chat WhatsApp kami atau isi form konsultasi di halaman Kontak. Tim kami akan menghubungi balik dalam jam kerja (Senin–Sabtu, 08.00–20.00 WIB) untuk diskusi kebutuhan anak Anda.',
+      'Cukup chat WhatsApp kami atau isi form konsultasi di halaman Kontak. Tim kami akan menghubungi balik dalam jam kerja (Senin–Minggu, 09.00–21.00 WIB) untuk diskusi kebutuhan anak Anda.',
     sortOrder: 12,
     isActive: true,
   },

@@ -8,11 +8,11 @@ export const siteSettings: SiteSettings = {
   waNumber: '6281180892201',
   waDefaultMessage: 'Halo Teman Tutor, saya ingin konsultasi untuk les privat anak saya.',
   email: 'temantutorindonesia@gmail.com',
-  instagramUrl: 'https://instagram.com/temantutor.id',
+  instagramUrl: undefined,
   tiktokUrl: undefined,
   youtubeUrl: undefined,
   areaServed: ['Bandung', 'Cimahi'],
-  responseHours: 'Senin–Sabtu, 08.00–20.00 WIB',
+  responseHours: 'Senin–Minggu, 09.00–21.00 WIB',
   brandTagline: 'Teman Belajar, Teman Bertumbuh',
   heroHeadline: 'Les Privat ke Rumah Terbaik, Lebih Fokus & Efektif',
   heroSubheadline:
