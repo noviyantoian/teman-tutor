@@ -7,7 +7,7 @@ import type { SiteSettings } from '@/types';
 export const siteSettings: SiteSettings = {
   waNumber: '6281180892201',
   waDefaultMessage: 'Halo Teman Tutor, saya ingin konsultasi untuk les privat anak saya.',
-  email: 'admin@temantutor.id',
+  email: 'temantutorindonesia@gmail.com',
   instagramUrl: 'https://instagram.com/temantutor.id',
   tiktokUrl: undefined,
   youtubeUrl: undefined,
