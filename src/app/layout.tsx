@@ -31,22 +31,27 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export const metadata: Metadata = buildMetadata({
-  title: 'Teman Tutor | Les Privat ke Rumah Bandung & Cimahi',
-  description:
-    'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, kursus bahasa & musik di Bandung & Cimahi. Tutor terseleksi, mulai Rp169.000/sesi, bisa trial 1 sesi.',
-  path: '/',
-  keywords: [
-    'les privat Bandung',
-    'les privat Cimahi',
-    'les privat ke rumah',
-    'tutor SD Bandung',
-    'tutor SMP Bandung',
-    'tutor SMA Bandung',
-    'les matematika Bandung',
-    'persiapan SNBT Bandung',
-  ],
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: 'Teman Tutor | Les Privat ke Rumah Bandung & Cimahi',
+    description:
+      'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, kursus bahasa & musik di Bandung & Cimahi. Tutor terseleksi, mulai Rp169.000/sesi, bisa trial 1 sesi.',
+    path: '/',
+    keywords: [
+      'les privat Bandung',
+      'les privat Cimahi',
+      'les privat ke rumah',
+      'tutor SD Bandung',
+      'tutor SMP Bandung',
+      'tutor SMA Bandung',
+      'les matematika Bandung',
+      'persiapan SNBT Bandung',
+    ],
+  }),
+  verification: {
+    google: 'W3Tq0QXqByFSpG-rel1bDX72OoGG3TP_vjqzISegrd4',
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
