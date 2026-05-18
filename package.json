@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "dev:webpack": "NEXT_USE_WEBPACK=true next dev",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
+    "build:next": "next build",
     "build:webpack": "NEXT_USE_WEBPACK=true next build",
     "build:cf": "opennextjs-cloudflare build",
     "deploy:cf": "opennextjs-cloudflare build && wrangler deploy",
