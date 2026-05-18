@@ -65,7 +65,7 @@ export function ProgramHighlightsSection() {
                   size="sm"
                   className="mt-4 self-start px-2 text-xs md:mt-6 md:px-3 md:text-sm"
                 >
-                  <Link href={`/program#${cat}`}>
+                  <Link href={`/program?kategori=${cat}#marketplace`}>
                     Lihat detail <ArrowRight className="size-3.5 md:size-4" />
                   </Link>
                 </Button>

@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { JsonLd } from '@/components/common/json-ld';
 import { CtaSection } from '@/components/sections/cta-section';
 import { ProgramMarketplace } from '@/components/sections/program-marketplace';
@@ -45,7 +47,9 @@ export default function ProgramPage() {
         </div>
       </section>
 
-      <ProgramMarketplace programs={programs} />
+      <Suspense fallback={null}>
+        <ProgramMarketplace programs={programs} />
+      </Suspense>
 
       <section className="section bg-brand-navy-50/40">
         <div className="container max-w-5xl">

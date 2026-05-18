@@ -3,7 +3,8 @@
 import { CheckCircle2, Search, SlidersHorizontal, X } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { programCategoryLabel } from '@/content/programs';
@@ -31,10 +32,22 @@ type Props = {
 };
 
 export function ProgramMarketplace({ programs }: Props) {
+  const searchParams = useSearchParams();
   const [selectedCategories, setSelectedCategories] = useState<ProgramCategory[]>([]);
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState<SortKey>('default');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+
+  useEffect(() => {
+    const raw = searchParams.get('kategori');
+    if (!raw) return;
+    const requested = raw.split(',').filter((c): c is ProgramCategory =>
+      CATEGORIES.includes(c as ProgramCategory),
+    );
+    if (requested.length > 0) {
+      setSelectedCategories(requested);
+    }
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     let list = programs.filter((p) => p.isActive);
@@ -175,7 +188,7 @@ export function ProgramMarketplace({ programs }: Props) {
   );
 
   return (
-    <section className="section-tight bg-white">
+    <section id="marketplace" className="section-tight scroll-mt-24 bg-white">
       <div className="container">
         <div className="mb-6 flex items-center justify-between lg:hidden">
           <p className="text-sm text-brand-navy-600">
@@ -206,17 +219,14 @@ export function ProgramMarketplace({ programs }: Props) {
           <div className="lg:col-span-9">
             <div className="mb-6 hidden items-center justify-between lg:flex">
               <p className="text-sm text-brand-navy-600">
-                Menampilkan{' '}
-                <span className="font-semibold text-brand-navy">{filtered.length}</span> dari{' '}
-                {programs.filter((p) => p.isActive).length} program
+                Menampilkan <span className="font-semibold text-brand-navy">{filtered.length}</span>{' '}
+                dari {programs.filter((p) => p.isActive).length} program
               </p>
             </div>
 
             {filtered.length === 0 ? (
               <div className="rounded-2xl border border-dashed border-brand-navy-100 bg-white p-12 text-center">
-                <p className="text-base font-semibold text-brand-navy">
-                  Tidak ada program cocok
-                </p>
+                <p className="text-base font-semibold text-brand-navy">Tidak ada program cocok</p>
                 <p className="mt-2 text-sm text-brand-navy-400">
                   Coba ubah filter atau hapus kata kunci pencarian.
                 </p>

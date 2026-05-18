@@ -18,10 +18,10 @@ const NAV_GROUPS = [
   {
     title: 'Layanan',
     links: [
-      { href: '/program#akademik', label: 'Les Akademik' },
-      { href: '/program#persiapan-khusus', label: 'Persiapan Ujian' },
-      { href: '/program#skill', label: 'Bahasa Asing' },
-      { href: '/program#musik', label: 'Musik' },
+      { href: '/program?kategori=akademik#marketplace', label: 'Les Akademik' },
+      { href: '/program?kategori=persiapan-khusus#marketplace', label: 'Persiapan Ujian' },
+      { href: '/program?kategori=skill#marketplace', label: 'Bahasa Asing' },
+      { href: '/program?kategori=musik#marketplace', label: 'Musik' },
     ],
   },
   {
