@@ -30,8 +30,7 @@ export default function TestimoniPage() {
         <div className="container max-w-3xl text-center">
           <span className="eyebrow">Testimoni</span>
           <h1 className="balanced mt-4 font-display text-display-2 font-bold text-brand-navy">
-            Cerita dari{' '}
-            <span className="text-brand-yellow-500">teman-teman kami</span>
+            Cerita dari <span className="text-brand-yellow-500">teman-teman kami</span>
           </h1>
           <p className="mt-5 text-lg text-brand-navy-600">
             Beberapa momen yang membuat kami terus semangat menjadi teman belajar.

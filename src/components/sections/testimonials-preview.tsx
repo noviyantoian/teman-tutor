@@ -13,8 +13,7 @@ export function TestimonialsPreviewSection() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Cerita Klien</span>
           <h2 className="mt-4 font-display text-heading-1 font-bold text-brand-navy">
-            Momen-momen{' '}
-            <span className="text-brand-yellow-500">kemenangan kecil</span>
+            Momen-momen <span className="text-brand-yellow-500">kemenangan kecil</span>
           </h2>
         </div>
 

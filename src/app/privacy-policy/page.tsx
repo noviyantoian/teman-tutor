@@ -10,16 +10,14 @@ export const metadata = buildMetadata({
 export default function PrivacyPolicyPage() {
   return (
     <article className="section bg-white">
-      <div className="container max-w-3xl prose prose-slate prose-headings:font-display prose-headings:text-brand-navy">
-        <h1 className="font-display text-display-2 font-bold text-brand-navy">
-          Privacy Policy
-        </h1>
+      <div className="prose prose-slate prose-headings:font-display prose-headings:text-brand-navy container max-w-3xl">
+        <h1 className="font-display text-display-2 font-bold text-brand-navy">Privacy Policy</h1>
         <p className="text-sm text-brand-navy-400">Terakhir diperbarui: 13 Mei 2026</p>
 
         <p>
           Teman Tutor (&ldquo;kami&rdquo;) menghormati privasi Anda. Kebijakan ini menjelaskan
-          bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi yang Anda
-          berikan melalui website ini.
+          bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi yang Anda berikan
+          melalui website ini.
         </p>
 
         <h2>1. Data yang Kami Kumpulkan</h2>
@@ -39,21 +37,20 @@ export default function PrivacyPolicyPage() {
 
         <h2>3. Pembagian Data</h2>
         <p>
-          Kami tidak menjual atau membagikan data pribadi Anda kepada pihak ketiga, kecuali
-          tutor yang akan mengajar anak Anda (sesuai kesepakatan) atau diwajibkan oleh hukum
-          yang berlaku.
+          Kami tidak menjual atau membagikan data pribadi Anda kepada pihak ketiga, kecuali tutor
+          yang akan mengajar anak Anda (sesuai kesepakatan) atau diwajibkan oleh hukum yang berlaku.
         </p>
 
         <h2>4. Keamanan</h2>
         <p>
-          Data dikirim via koneksi terenkripsi (HTTPS) dan disimpan di sistem dengan akses
-          terbatas. Kami menerapkan praktik keamanan standar industri.
+          Data dikirim via koneksi terenkripsi (HTTPS) dan disimpan di sistem dengan akses terbatas.
+          Kami menerapkan praktik keamanan standar industri.
         </p>
 
         <h2>5. Hak Anda</h2>
         <p>
-          Anda berhak meminta akses, koreksi, atau penghapusan data pribadi Anda. Hubungi
-          kami via email untuk permintaan tersebut.
+          Anda berhak meminta akses, koreksi, atau penghapusan data pribadi Anda. Hubungi kami via
+          email untuk permintaan tersebut.
         </p>
 
         <h2>6. Kontak</h2>
