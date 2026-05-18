@@ -92,20 +92,37 @@ export function Header() {
       {open ? (
         <div
           id="mobile-menu"
-          className="border-t border-brand-navy-50 bg-white shadow-soft-sm md:hidden"
+          className="border-t border-brand-navy-50 bg-white shadow-soft md:hidden"
         >
-          <nav aria-label="Mobile" className="container flex flex-col py-3">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-md px-3 py-3 text-base font-medium text-brand-navy hover:bg-brand-navy-50"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button asChild variant="accent" size="lg" className="mt-2">
-              <Link href="/kontak">Konsultasi</Link>
+          <nav aria-label="Mobile" className="container flex flex-col py-4">
+            {NAV_LINKS.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'group flex items-center justify-between rounded-xl px-4 py-4 font-display text-xl font-semibold tracking-tight transition-colors',
+                    active
+                      ? 'bg-brand-yellow-100 text-brand-navy'
+                      : 'text-brand-navy hover:bg-brand-navy-50',
+                  )}
+                >
+                  <span>{link.label}</span>
+                  <span
+                    aria-hidden
+                    className={cn(
+                      'text-brand-navy-300 transition-transform',
+                      active ? 'text-brand-navy' : 'group-hover:translate-x-1',
+                    )}
+                  >
+                    →
+                  </span>
+                </Link>
+              );
+            })}
+            <Button asChild variant="accent" size="lg" className="mt-4 h-14 text-base">
+              <Link href="/kontak">Konsultasi Gratis</Link>
             </Button>
           </nav>
         </div>
