@@ -67,7 +67,7 @@ export function Hero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft-lg ring-1 ring-white/10">
               <Image
                 src={HERO_IMAGE}
-                alt="Anak belajar dengan fokus didampingi tutor di rumah"
+                alt="Les privat 1-on-1 ke rumah bersama tutor Teman Tutor di Bandung"
                 fill
                 priority
                 fetchPriority="high"

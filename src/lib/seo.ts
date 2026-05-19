@@ -7,8 +7,6 @@ const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? 'Teman Tutor';
 const DEFAULT_DESCRIPTION =
   'Teman Tutor | Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp169.000/sesi.';
 
-const DEFAULT_OG_IMAGE = '/og-default.png';
-
 type BuildMetadataInput = {
   title: string;
   description?: string;
@@ -21,18 +19,25 @@ type BuildMetadataInput = {
 /**
  * Build Next.js Metadata for a page with sensible defaults.
  * Always call this in every page's `metadata` export.
+ *
+ * OG/Twitter images: when `image` is not provided, the image fields are
+ * omitted so Next.js can pick up the file-based `opengraph-image.tsx`
+ * convention (root or per-route) automatically.
  */
 export function buildMetadata({
   title,
   description = DEFAULT_DESCRIPTION,
   path = '/',
-  image = DEFAULT_OG_IMAGE,
+  image,
   noindex = false,
   keywords,
 }: BuildMetadataInput): Metadata {
   const siteUrl = getSiteUrl();
   const canonical = `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`;
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+
+  const ogImages = image ? [{ url: image, width: 1200, height: 630, alt: SITE_NAME }] : undefined;
+  const twitterImages = image ? [image] : undefined;
 
   return {
     title: fullTitle,
@@ -50,13 +55,13 @@ export function buildMetadata({
       title: fullTitle,
       description,
       siteName: SITE_NAME,
-      images: [{ url: image, width: 1200, height: 630, alt: SITE_NAME }],
+      ...(ogImages ? { images: ogImages } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      ...(twitterImages ? { images: twitterImages } : {}),
     },
     other: {
       'theme-color': '#0A1E3D',
@@ -96,7 +101,7 @@ export function localBusinessJsonLd() {
     '@type': 'EducationalOrganization',
     name: SITE_NAME,
     url: siteUrl,
-    image: `${siteUrl}/og-default.png`,
+    image: `${siteUrl}/opengraph-image`,
     description: DEFAULT_DESCRIPTION,
     telephone: `+${siteSettings.waNumber}`,
     areaServed: siteSettings.areaServed.map((a) => ({

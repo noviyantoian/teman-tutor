@@ -36,7 +36,7 @@ export function HowItWorksSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft-lg">
               <Image
                 src={HOW_IT_WORKS_IMAGE}
-                alt="Anak fokus belajar dengan buku catatan"
+                alt="Siswa SMP belajar privat dengan tutor profesional Teman Tutor"
                 fill
                 sizes="(min-width: 1024px) 40vw, (min-width: 640px) 70vw, 90vw"
                 className="object-cover"

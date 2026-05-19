@@ -43,7 +43,7 @@ export function ProgramHighlightsSection() {
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-navy-50">
                   <Image
                     src={CATEGORY_IMAGE[cat]}
-                    alt={programCategoryLabel[cat]}
+                    alt={`Les privat kategori ${programCategoryLabel[cat]} di Teman Tutor`}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
