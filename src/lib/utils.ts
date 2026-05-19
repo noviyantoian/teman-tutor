@@ -36,10 +36,18 @@ export function slugify(input: string): string {
 }
 
 /**
- * Get the absolute site URL, uses env or falls back to localhost.
+ * Get the absolute site URL.
+ * Prefers NEXT_PUBLIC_SITE_URL. Falls back to the canonical production
+ * domain in production, and to localhost in development. This prevents
+ * sitemap.xml, canonical, and OG URLs from leaking "localhost" when the
+ * env var is missing in the build/runtime environment.
  */
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'http://localhost:3000';
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '');
+  if (fromEnv) return fromEnv;
+  return process.env.NODE_ENV === 'production'
+    ? 'https://www.temantutor.com'
+    : 'http://localhost:3000';
 }
 
 /**

@@ -109,7 +109,7 @@ export default async function Image() {
           >
             Mulai Rp169.000 / sesi
           </div>
-          <div style={{ fontSize: 24, color: '#94A3B8' }}>temantutor.id</div>
+          <div style={{ fontSize: 24, color: '#94A3B8' }}>www.temantutor.com</div>
         </div>
       </div>
     ),
