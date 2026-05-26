@@ -20,7 +20,6 @@ export const leadFormSchema = z.object({
     .trim()
     .regex(phoneRegex, 'Nomor WhatsApp tidak valid (contoh: 081234567890)')
     .transform((val) => {
-      // Normalize to 628xxxxxxxx
       const digits = val.replace(/\D/g, '');
       if (digits.startsWith('62')) return digits;
       if (digits.startsWith('0')) return `62${digits.slice(1)}`;
@@ -32,22 +31,45 @@ export const leadFormSchema = z.object({
     .optional()
     .transform((v) => (v === '' ? undefined : v)),
 
-  childGrade: z.enum(['balita', 'sd-1-3', 'sd-4-6', 'smp', 'sma', 'mahasiswa', 'umum'], {
-    errorMap: () => ({ message: 'Pilih jenjang anak' }),
+  age: z
+    .string()
+    .trim()
+    .regex(/^\d{1,3}$/, 'Umur tidak valid')
+    .transform(Number)
+    .pipe(z.number().int().min(1, 'Umur minimal 1').max(100, 'Umur maksimal 100')),
+
+  gender: z.enum(['laki-laki', 'perempuan'], {
+    errorMap: () => ({ message: 'Pilih jenis kelamin' }),
   }),
+
+  classAndCurriculum: z.string().trim().max(100).optional(),
+
+  schoolName: z.string().trim().max(120).optional(),
 
   subjectsInterested: z
     .array(z.string().trim().min(1).max(60))
     .min(1, 'Pilih minimal 1 program')
     .max(10),
 
-  area: z.enum(['bandung', 'cimahi', 'lainnya'], {
-    errorMap: () => ({ message: 'Pilih area' }),
+  sessionsPerWeek: z.enum(['1', '2', '3', '4', '5'], {
+    errorMap: () => ({ message: 'Pilih jumlah sesi per minggu' }),
   }),
 
-  areaDetail: z.string().trim().max(120).optional(),
+  schedulePreference: z
+    .string()
+    .trim()
+    .min(2, 'Isi jadwal / kapan ingin mulai les')
+    .max(300, 'Terlalu panjang'),
 
-  message: z.string().trim().max(1000, 'Pesan terlalu panjang').optional(),
+  teacherCriteria: z.string().trim().max(500).optional(),
+
+  locationAddress: z
+    .string()
+    .trim()
+    .min(5, 'Isi alamat lengkap lokasi les')
+    .max(500, 'Alamat terlalu panjang'),
+
+  locationLandmark: z.string().trim().max(200).optional(),
 
   // Honeypot, must be empty/undefined
   website: z

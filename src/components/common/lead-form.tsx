@@ -39,11 +39,16 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
       fullName: String(fd.get('fullName') ?? ''),
       phoneWa: String(fd.get('phoneWa') ?? ''),
       email: String(fd.get('email') ?? ''),
-      childGrade: String(fd.get('childGrade') ?? ''),
+      age: String(fd.get('age') ?? ''),
+      gender: String(fd.get('gender') ?? ''),
+      classAndCurriculum: String(fd.get('classAndCurriculum') ?? ''),
+      schoolName: String(fd.get('schoolName') ?? ''),
       subjectsInterested: subjects,
-      area: String(fd.get('area') ?? ''),
-      areaDetail: String(fd.get('areaDetail') ?? ''),
-      message: String(fd.get('message') ?? ''),
+      sessionsPerWeek: String(fd.get('sessionsPerWeek') ?? ''),
+      schedulePreference: String(fd.get('schedulePreference') ?? ''),
+      teacherCriteria: String(fd.get('teacherCriteria') ?? ''),
+      locationAddress: String(fd.get('locationAddress') ?? ''),
+      locationLandmark: String(fd.get('locationLandmark') ?? ''),
       website: String(fd.get('website') ?? ''), // honeypot
       sourcePage: sourcePage ?? '/',
     };
@@ -86,6 +91,9 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
     'Gitar',
   ];
 
+  const selectClass =
+    'mt-1.5 flex h-11 w-full rounded-md border border-input bg-white px-3 text-sm shadow-soft-sm focus-visible:border-brand-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow-500/40';
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -100,6 +108,7 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      {/* Nama + WA */}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="fullName">Nama Lengkap *</Label>
@@ -110,7 +119,7 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
             minLength={2}
             maxLength={80}
             autoComplete="name"
-            placeholder="Contoh: Bu Sinta"
+            placeholder="Contoh: Budi Santoso"
             className="mt-1.5"
           />
         </div>
@@ -129,6 +138,7 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
         </div>
       </div>
 
+      {/* Email */}
       <div>
         <Label htmlFor="email">Email (opsional)</Label>
         <Input
@@ -141,32 +151,76 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
         />
       </div>
 
-      <div>
-        <Label htmlFor="childGrade">Jenjang Anak *</Label>
-        <select
-          id="childGrade"
-          name="childGrade"
-          required
-          defaultValue=""
-          className="mt-1.5 flex h-11 w-full rounded-md border border-input bg-white px-3 text-sm shadow-soft-sm focus-visible:border-brand-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow-500/40"
-        >
-          <option value="" disabled>
-            Pilih jenjang…
-          </option>
-          <option value="balita">Balita / TK</option>
-          <option value="sd-1-3">SD Kelas 1–3</option>
-          <option value="sd-4-6">SD Kelas 4–6</option>
-          <option value="smp">SMP</option>
-          <option value="sma">SMA</option>
-          <option value="mahasiswa">Mahasiswa</option>
-          <option value="umum">Umum / Dewasa</option>
-        </select>
+      {/* Umur + Jenis Kelamin */}
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <Label htmlFor="age">Umur *</Label>
+          <Input
+            id="age"
+            name="age"
+            type="number"
+            inputMode="numeric"
+            required
+            min={1}
+            max={100}
+            placeholder="Contoh: 14"
+            className="mt-1.5"
+          />
+        </div>
+        <div>
+          <fieldset>
+            <legend className="text-sm font-medium text-brand-navy">Jenis Kelamin *</legend>
+            <div className="mt-2 flex flex-wrap gap-3">
+              {(['laki-laki', 'perempuan'] as const).map((g) => (
+                <label
+                  key={g}
+                  className="inline-flex items-center gap-2 rounded-md border border-input bg-white px-3 py-2 text-sm capitalize"
+                >
+                  <input
+                    type="radio"
+                    name="gender"
+                    value={g}
+                    required
+                    className="accent-brand-yellow-500"
+                  />
+                  {g === 'laki-laki' ? 'Laki-laki' : 'Perempuan'}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
       </div>
 
+      {/* Kelas & Kurikulum + Nama Sekolah */}
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <Label htmlFor="classAndCurriculum">Kelas & Kurikulum (opsional)</Label>
+          <Input
+            id="classAndCurriculum"
+            name="classAndCurriculum"
+            maxLength={100}
+            placeholder="Contoh: Kelas 10, Kurikulum Merdeka"
+            className="mt-1.5"
+          />
+          <p className="mt-1 text-xs text-brand-navy-400">Jika masih bersekolah / kuliah.</p>
+        </div>
+        <div>
+          <Label htmlFor="schoolName">Nama Sekolah / Universitas (opsional)</Label>
+          <Input
+            id="schoolName"
+            name="schoolName"
+            maxLength={120}
+            placeholder="Contoh: SMA Negeri 3 Bandung"
+            className="mt-1.5"
+          />
+        </div>
+      </div>
+
+      {/* Mata Pelajaran */}
       <div>
         <fieldset>
           <legend className="text-sm font-medium text-brand-navy">
-            Mata Pelajaran / Program *
+            Ingin Les Mata Pelajaran Apa? *
           </legend>
           <p className="mt-1 text-xs text-brand-navy-400">Pilih satu atau lebih.</p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -190,54 +244,84 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
             })}
           </div>
           <p className="mt-2 text-xs text-brand-navy-400">
-            Tidak ada di daftar? Tulis di kolom pesan ({programs.length} program tersedia).
+            Tidak ada di daftar? Tulis di kriteria pengajar ({programs.length} program tersedia).
           </p>
         </fieldset>
       </div>
 
+      {/* Paket Sesi */}
       <div>
-        <fieldset>
-          <legend className="text-sm font-medium text-brand-navy">Area *</legend>
-          <div className="mt-2 flex flex-wrap gap-3">
-            {(['bandung', 'cimahi', 'lainnya'] as const).map((a) => (
-              <label
-                key={a}
-                className="inline-flex items-center gap-2 rounded-md border border-input bg-white px-3 py-2 text-sm capitalize"
-              >
-                <input
-                  type="radio"
-                  name="area"
-                  value={a}
-                  required
-                  className="accent-brand-yellow-500"
-                />
-                {a}
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <Label htmlFor="sessionsPerWeek">Paket Sesi per Bulan (berapa kali per minggu) *</Label>
+        <select
+          id="sessionsPerWeek"
+          name="sessionsPerWeek"
+          required
+          defaultValue=""
+          className={selectClass}
+        >
+          <option value="" disabled>
+            Pilih frekuensi les…
+          </option>
+          <option value="1">1x seminggu</option>
+          <option value="2">2x seminggu</option>
+          <option value="3">3x seminggu</option>
+          <option value="4">4x seminggu</option>
+          <option value="5">5x seminggu</option>
+        </select>
       </div>
 
+      {/* Jadwal Les */}
       <div>
-        <Label htmlFor="areaDetail">Detail Area (opsional)</Label>
-        <Input
-          id="areaDetail"
-          name="areaDetail"
-          maxLength={120}
-          placeholder="Contoh: Antapani, Bandung Timur"
-          className="mt-1.5"
-        />
-      </div>
-
-      <div>
-        <Label htmlFor="message">Pesan Tambahan (opsional)</Label>
+        <Label htmlFor="schedulePreference">Jadwal Les (ingin mulai kapan?) *</Label>
         <Textarea
-          id="message"
-          name="message"
-          maxLength={1000}
-          placeholder="Ceritakan sedikit kebutuhan anak Anda…"
+          id="schedulePreference"
+          name="schedulePreference"
+          required
+          minLength={2}
+          maxLength={300}
+          placeholder="Contoh: Ingin mulai minggu depan, hari Senin & Rabu sore sekitar jam 15.00–17.00"
           className="mt-1.5"
         />
+      </div>
+
+      {/* Kriteria Pengajar */}
+      <div>
+        <Label htmlFor="teacherCriteria">Kriteria Pengajar (opsional)</Label>
+        <Textarea
+          id="teacherCriteria"
+          name="teacherCriteria"
+          maxLength={500}
+          placeholder="Contoh: Pengajar perempuan, sabar, berpengalaman mengajar anak SD"
+          className="mt-1.5"
+        />
+      </div>
+
+      {/* Lokasi Les */}
+      <div>
+        <Label htmlFor="locationAddress">Lokasi Les — Alamat Lengkap *</Label>
+        <Textarea
+          id="locationAddress"
+          name="locationAddress"
+          required
+          minLength={5}
+          maxLength={500}
+          placeholder="Contoh: Jl. Cihampelas No. 123, RT 04/RW 02, Kel. Cipaganti, Kec. Coblong, Bandung 40131"
+          className="mt-1.5"
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="locationLandmark">Patokan Alamat (opsional)</Label>
+        <Input
+          id="locationLandmark"
+          name="locationLandmark"
+          maxLength={200}
+          placeholder="Contoh: Dekat Masjid Al-Ikhlas, seberang Indomaret Cihampelas"
+          className="mt-1.5"
+        />
+        <p className="mt-1 text-xs text-brand-navy-400">
+          Bisa kirimkan share location via WhatsApp setelah form ini dikirim.
+        </p>
       </div>
 
       {error ? (

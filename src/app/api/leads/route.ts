@@ -33,13 +33,19 @@ function escapeHtml(str: string): string {
 
 function renderEmailHtml(input: ReturnType<typeof leadFormSchema.parse>): string {
   const rows: Array<[string, string]> = [
-    ['Nama', input.fullName],
+    ['Nama Lengkap', input.fullName],
     ['WhatsApp', `+${input.phoneWa}`],
     ['Email', input.email ?? '-'],
-    ['Jenjang Anak', input.childGrade],
+    ['Umur', String(input.age)],
+    ['Jenis Kelamin', input.gender === 'laki-laki' ? 'Laki-laki' : 'Perempuan'],
+    ['Kelas & Kurikulum', input.classAndCurriculum ?? '-'],
+    ['Nama Sekolah / Universitas', input.schoolName ?? '-'],
     ['Mata Pelajaran', input.subjectsInterested.join(', ')],
-    ['Area', `${input.area}${input.areaDetail ? ` (${input.areaDetail})` : ''}`],
-    ['Pesan', input.message ?? '-'],
+    ['Sesi per Minggu', `${input.sessionsPerWeek}x seminggu`],
+    ['Jadwal Les', input.schedulePreference],
+    ['Kriteria Pengajar', input.teacherCriteria ?? '-'],
+    ['Lokasi Les (Alamat)', input.locationAddress],
+    ['Patokan Alamat', input.locationLandmark ?? '-'],
     ['Source Page', input.sourcePage ?? '-'],
   ];
 
@@ -115,7 +121,7 @@ export async function POST(req: Request) {
         from,
         to,
         replyTo: parsed.data.email,
-        subject: `Lead Baru: ${parsed.data.fullName} (${parsed.data.area})`,
+        subject: `Lead Baru: ${parsed.data.fullName} — ${parsed.data.subjectsInterested[0] ?? 'Les Privat'}`,
         html: renderEmailHtml(parsed.data),
       });
     } catch (err) {
@@ -126,7 +132,6 @@ export async function POST(req: Request) {
     // Dev convenience: log payload so we can verify the flow.
     console.info('[leads] (dev) lead received (Resend not configured):', {
       name: parsed.data.fullName,
-      area: parsed.data.area,
       subjects: parsed.data.subjectsInterested,
     });
   } else {
