@@ -1,0 +1,21 @@
+# Teman Tutor
+
+> Platform les privat 1-on-1 ke rumah, melayani area Bandung dan Cimahi. "Teman Belajar, Teman Bertumbuh."
+
+Teman Tutor menyediakan layanan les privat untuk SD, SMP, SMA, dan mahasiswa. Mata pelajaran mencakup Matematika, IPA, IPS, Bahasa Inggris, Bahasa Indonesia, persiapan SBMPTN/UTBK/IELTS/TOEFL, serta les musik dan seni. Tutor datang ke rumah siswa, melayani area Bandung dan Cimahi.
+
+## Halaman Utama
+
+- [Beranda](https://www.temantutor.com/): Overview layanan, value proposition, dan CTA konsultasi gratis via WhatsApp
+- [Tentang Kami](https://www.temantutor.com/tentang): Sejarah, visi-misi, dan profil Teman Tutor
+- [Program & Harga](https://www.temantutor.com/program): Daftar program les (akademik, bahasa, musik) dan paket harga
+- [Tutor](https://www.temantutor.com/tutor): Profil tutor berpengalaman dan terverifikasi
+- [Testimoni](https://www.temantutor.com/testimoni): Ulasan dari orang tua dan siswa
+- [FAQ](https://www.temantutor.com/faq): Pertanyaan umum seputar proses, harga, dan sistem les
+- [Kontak](https://www.temantutor.com/kontak): Formulir konsultasi gratis dan kontak WhatsApp
+
+## Optional
+
+- [Privacy Policy](https://www.temantutor.com/privacy-policy)
+- [Syarat & Ketentuan](https://www.temantutor.com/terms)
+- [Sitemap](https://www.temantutor.com/sitemap.xml)
