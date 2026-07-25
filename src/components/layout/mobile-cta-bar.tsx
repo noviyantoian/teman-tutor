@@ -1,9 +1,10 @@
 'use client';
 
-import { MessageCircle, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import Link from 'next/link';
 
 import { WhatsAppDialog } from '@/components/common/whatsapp-float';
+import { WhatsAppIcon } from '@/components/common/whatsapp-icon';
 
 /**
  * Sticky bottom CTA bar, only visible on mobile.
@@ -18,7 +19,7 @@ export function MobileCtaBar() {
             type="button"
             className="flex h-11 flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 text-sm font-semibold text-white"
           >
-            <MessageCircle className="size-4" />
+            <WhatsAppIcon className="size-4" />
             Chat WhatsApp
           </button>
         </WhatsAppDialog>

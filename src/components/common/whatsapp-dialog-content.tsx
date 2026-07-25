@@ -1,9 +1,10 @@
 'use client';
 
 import * as Dialog from '@radix-ui/react-dialog';
-import { MessageCircle, Send, X } from 'lucide-react';
+import { Send, X } from 'lucide-react';
 import { useState } from 'react';
 
+import { WhatsAppIcon } from '@/components/common/whatsapp-icon';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { siteSettings } from '@/content/site-settings';
@@ -51,7 +52,7 @@ export default function WhatsAppDialogContent({ open, onOpenChange, source }: Pr
         <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[92vw] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-soft-lg focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95">
           <div className="flex items-center gap-3 bg-[#25D366] px-5 py-4 text-white">
             <div className="flex size-10 items-center justify-center rounded-full bg-white/20">
-              <MessageCircle className="size-5" strokeWidth={2.25} />
+              <WhatsAppIcon className="size-5" />
             </div>
             <div className="flex-1">
               <Dialog.Title className="text-base font-semibold leading-tight">
