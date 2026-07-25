@@ -8,8 +8,7 @@ import { Button } from '@/components/ui/button';
 import { siteSettings } from '@/content/site-settings';
 import { buildWaLink } from '@/lib/wa';
 
-// Self-hosted hero image (originally from Unsplash by Annie Spratt)
-const HERO_IMAGE = '/images/hero/hero-tutoring.webp';
+const HERO_IMAGE = '/images/hero/hero-tutoring-2026.webp';
 
 export function Hero() {
   return (
@@ -67,7 +66,7 @@ export function Hero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft-lg ring-1 ring-white/10">
               <Image
                 src={HERO_IMAGE}
-                alt="Les privat 1-on-1 ke rumah bersama tutor Teman Tutor di Bandung"
+                alt="Tutor Teman Tutor mengajar siswa 1-on-1 di rumah, area Jabodetabek, Bandung & Cimahi"
                 fill
                 priority
                 fetchPriority="high"

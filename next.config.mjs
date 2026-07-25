@@ -14,8 +14,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'images.pexels.com' },
       { protocol: 'https', hostname: 'randomuser.me' },
       // Future: Supabase
       // { protocol: 'https', hostname: '**.supabase.co' },

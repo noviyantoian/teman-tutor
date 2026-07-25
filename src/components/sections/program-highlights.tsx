@@ -10,11 +10,12 @@ import type { ProgramCategory } from '@/types';
 
 const CATEGORY_ORDER: ProgramCategory[] = ['akademik', 'persiapan-khusus', 'skill', 'musik'];
 
+// Reuses the per-program photo set so home and /program share one visual language.
 const CATEGORY_IMAGE: Record<ProgramCategory, string> = {
-  akademik: '/images/category/akademik.webp',
-  'persiapan-khusus': '/images/category/persipan-khsusu.webp',
-  skill: '/images/category/bahasa.webp',
-  musik: '/images/category/musik.webp',
+  akademik: '/images/program/sd.webp',
+  'persiapan-khusus': '/images/program/snbt-utbk.webp',
+  skill: '/images/program/english.webp',
+  musik: '/images/program/piano.webp',
 };
 
 export function ProgramHighlightsSection() {

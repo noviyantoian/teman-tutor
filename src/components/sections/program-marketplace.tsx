@@ -21,6 +21,7 @@ import {
   X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -275,57 +276,73 @@ export function ProgramMarketplace({ programs }: Props) {
                   return (
                     <article
                       key={p.id}
-                      className="flex flex-col rounded-2xl border border-brand-navy-50 bg-white p-4 shadow-soft-sm transition-all hover:-translate-y-0.5 hover:shadow-soft sm:p-5"
+                      className="group flex flex-col overflow-hidden rounded-2xl border border-brand-navy-50 bg-white shadow-soft-sm transition-all hover:-translate-y-0.5 hover:shadow-soft"
                     >
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-yellow-100 text-brand-navy sm:size-11">
-                          <Icon className="size-5" aria-hidden />
-                        </div>
-                        <span className="rounded-full bg-brand-navy-50 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-navy-600 sm:px-2.5 sm:text-[10px]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-navy-50">
+                        {p.imageUrl ? (
+                          <Image
+                            src={p.imageUrl}
+                            alt={`Suasana les privat ${p.name} bersama tutor Teman Tutor`}
+                            fill
+                            sizes="(min-width: 1280px) 300px, (min-width: 640px) 45vw, 50vw"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="flex size-full items-center justify-center text-brand-navy">
+                            <Icon className="size-8" aria-hidden />
+                          </div>
+                        )}
+                        <div
+                          aria-hidden
+                          className="absolute inset-0 bg-gradient-to-t from-brand-navy/45 via-brand-navy/0 to-transparent"
+                        />
+                        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-navy-600 backdrop-blur-sm sm:px-2.5 sm:text-[10px]">
                           {programCategoryLabel[p.category]}
                         </span>
                       </div>
-                      <h3 className="mt-4 flex min-h-[2.5rem] items-center text-sm font-semibold leading-tight text-brand-navy sm:text-base">
-                        <span className="line-clamp-2">{p.name}</span>
-                      </h3>
-                      <p className="mt-1.5 flex min-h-[2.5rem] items-center text-xs text-brand-navy-400 sm:text-sm">
-                        <span className="line-clamp-2">{p.description}</span>
-                      </p>
-                      <ul className="mt-3 flex min-h-[3.5rem] flex-col justify-center space-y-1 pb-2">
-                        {p.subjects.slice(0, 3).map((s) => (
-                          <li
-                            key={s}
-                            className="flex items-center gap-2 text-[11px] text-brand-navy-600 sm:text-xs"
-                          >
-                            <CheckCircle2
-                              className="size-3.5 shrink-0 text-brand-yellow-500"
-                              aria-hidden
-                            />
-                            <span className="truncate">{s}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-auto flex flex-col items-stretch gap-3 pt-4 sm:flex-row sm:items-end sm:justify-between">
-                        <div>
-                          <p className="text-[10px] text-brand-navy-400 sm:text-[11px]">
-                            Mulai dari
-                          </p>
-                          <p className="text-base font-bold leading-tight text-brand-navy sm:text-lg">
-                            {formatIDR(p.priceFrom)}
-                          </p>
-                          <p className="text-[10px] text-brand-navy-400">
-                            / {p.sessionDurationMinutes} menit
-                          </p>
+                      <div className="flex flex-1 flex-col p-4 sm:p-5">
+                        <h3 className="flex min-h-[2.5rem] items-center text-sm font-semibold leading-tight text-brand-navy sm:text-base">
+                          <span className="line-clamp-2">{p.name}</span>
+                        </h3>
+                        <p className="mt-1.5 flex min-h-[2.5rem] items-center text-xs text-brand-navy-400 sm:text-sm">
+                          <span className="line-clamp-2">{p.description}</span>
+                        </p>
+                        <ul className="mt-3 flex min-h-[3.5rem] flex-col justify-center space-y-1 pb-2">
+                          {p.subjects.slice(0, 3).map((s) => (
+                            <li
+                              key={s}
+                              className="flex items-center gap-2 text-[11px] text-brand-navy-600 sm:text-xs"
+                            >
+                              <CheckCircle2
+                                className="size-3.5 shrink-0 text-brand-yellow-500"
+                                aria-hidden
+                              />
+                              <span className="truncate">{s}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-auto flex flex-col items-stretch gap-3 pt-4 sm:flex-row sm:items-end sm:justify-between">
+                          <div>
+                            <p className="text-[10px] text-brand-navy-400 sm:text-[11px]">
+                              Mulai dari
+                            </p>
+                            <p className="text-base font-bold leading-tight text-brand-navy sm:text-lg">
+                              {formatIDR(p.priceFrom)}
+                            </p>
+                            <p className="text-[10px] text-brand-navy-400">
+                              / {p.sessionDurationMinutes} menit
+                            </p>
+                          </div>
+                          <Button asChild variant="accent" size="sm" className="w-full sm:w-auto">
+                            <a
+                              href={waLinkForProgram(p.name)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Tanya
+                            </a>
+                          </Button>
                         </div>
-                        <Button asChild variant="accent" size="sm" className="w-full sm:w-auto">
-                          <a
-                            href={waLinkForProgram(p.name)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Tanya
-                          </a>
-                        </Button>
                       </div>
                     </article>
                   );

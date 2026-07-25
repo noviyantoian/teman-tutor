@@ -1,8 +1,7 @@
 import { CalendarCheck, MessageCircle, PlayCircle, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 
-const HOW_IT_WORKS_IMAGE =
-  'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80';
+const HOW_IT_WORKS_IMAGE = '/images/hero/cara-mulai.webp';
 
 const STEPS = [
   {
@@ -36,7 +35,7 @@ export function HowItWorksSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-soft-lg">
               <Image
                 src={HOW_IT_WORKS_IMAGE}
-                alt="Siswa SMP belajar privat dengan tutor profesional Teman Tutor"
+                alt="Siswa SMP belajar privat di rumah bersama tutor Teman Tutor, ditemani orang tua"
                 fill
                 sizes="(min-width: 1024px) 40vw, (min-width: 640px) 70vw, 90vw"
                 className="object-cover"
