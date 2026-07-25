@@ -6,6 +6,7 @@ import { ProgramHighlightsSection } from '@/components/sections/program-highligh
 import { ServiceAreaSection } from '@/components/sections/service-area';
 import { StatsSection } from '@/components/sections/stats-section';
 import { TestimonialsPreviewSection } from '@/components/sections/testimonials-preview';
+import { UniversityShowcaseSection } from '@/components/sections/university-showcase';
 import { ValuePropsSection } from '@/components/sections/value-props';
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HowItWorksSection />
       <StatsSection />
       <TestimonialsPreviewSection />
+      <UniversityShowcaseSection />
       <FaqPreviewSection />
       <ServiceAreaSection />
       <CtaSection />

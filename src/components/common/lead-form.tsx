@@ -78,17 +78,22 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
     );
   };
 
-  const popularSubjects = [
-    'Matematika SD',
-    'Matematika SMP',
-    'Matematika SMA',
-    'IPA',
-    'Bahasa Inggris',
-    'IELTS',
-    'Persiapan SNBT',
+  // Client-approved option list (REVISI 1, 2026-07-25).
+  const subjectOptions = [
     'Calistung',
-    'Piano',
-    'Gitar',
+    'Akademik (Matematika, IPA, IPS, Bahasa Inggris, Bahasa Indonesia, dll)',
+    'SNBT / UTBK',
+    'Tes Kedinasan (STAN, STIS, dll)',
+    'Olimpiade',
+    'Bahasa Inggris',
+    'Khusus IELTS / TOEFL',
+    'Bahasa Mandarin',
+    'Bahasa Jepang',
+    'Bahasa Korea',
+    'Musik Piano',
+    'Musik Gitar',
+    'Musik Biola',
+    'Musik Vocal',
   ];
 
   const selectClass =
@@ -224,7 +229,7 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
           </legend>
           <p className="mt-1 text-xs text-brand-navy-400">Pilih satu atau lebih.</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {popularSubjects.map((s) => {
+            {subjectOptions.map((s) => {
               const active = subjects.includes(s);
               return (
                 <button
@@ -233,8 +238,8 @@ export function LeadForm({ sourcePage }: { sourcePage?: string }) {
                   onClick={() => toggleSubject(s)}
                   className={
                     active
-                      ? 'rounded-full border-2 border-brand-navy bg-brand-navy px-3.5 py-1.5 text-xs font-semibold text-white'
-                      : 'rounded-full border-2 border-brand-navy-100 bg-white px-3.5 py-1.5 text-xs font-medium text-brand-navy-600 hover:border-brand-navy-300'
+                      ? 'max-w-full whitespace-normal rounded-2xl border-2 border-brand-navy bg-brand-navy px-3.5 py-1.5 text-left text-xs font-semibold text-white'
+                      : 'max-w-full whitespace-normal rounded-2xl border-2 border-brand-navy-100 bg-white px-3.5 py-1.5 text-left text-xs font-medium text-brand-navy-600 transition-colors hover:border-brand-navy-300'
                   }
                   aria-pressed={active}
                 >

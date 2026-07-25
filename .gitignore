@@ -37,6 +37,7 @@ yarn-error.log*
 
 # cloudflare / open-next build output
 .open-next/
+.wrangler/
 
 # typescript
 *.tsbuildinfo
@@ -44,6 +45,9 @@ next-env.d.ts
 
 # bundle analyzer
 .next/analyze/
+
+# client revision briefs & raw source assets (optimized versions live in public/)
+REVISI/
 
 # IDE
 .idea/

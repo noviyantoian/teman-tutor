@@ -11,7 +11,7 @@ export const stats: Stat[] = [
     id: 'stat-students',
     value: '500+',
     label: 'Siswa Terbantu',
-    description: 'Anak yang sudah belajar bersama Teman Tutor di Bandung & Cimahi.',
+    description: 'Anak yang sudah belajar bersama Teman Tutor di Jabodetabek, Bandung & Cimahi.',
     icon: 'Users',
   },
   {

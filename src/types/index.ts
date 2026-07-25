@@ -4,14 +4,7 @@
  */
 
 export type ProgramCategory = 'akademik' | 'skill' | 'musik' | 'persiapan-khusus';
-export type GradeLevel =
-  | 'balita'
-  | 'sd-1-3'
-  | 'sd-4-6'
-  | 'smp'
-  | 'sma'
-  | 'mahasiswa'
-  | 'umum';
+export type GradeLevel = 'balita' | 'sd-1-3' | 'sd-4-6' | 'smp' | 'sma' | 'mahasiswa' | 'umum';
 export type Area = 'bandung' | 'cimahi' | 'lainnya';
 export type TestimonialType = 'text' | 'screenshot' | 'video';
 export type FaqCategory = 'umum' | 'tutor' | 'harga-paket' | 'jadwal' | 'area-layanan';
@@ -44,6 +37,14 @@ export type Testimonial = {
   isActive: boolean;
 };
 
+export type University = {
+  id: string;
+  name: string;
+  logoUrl: string;
+  sortOrder: number;
+  isActive: boolean;
+};
+
 export type Program = {
   id: string;
   slug: string;
@@ -51,6 +52,7 @@ export type Program = {
   name: string;
   description: string;
   icon: string; // lucide icon name
+  imageUrl?: string; // 16:10 cover photo, falls back to the icon when absent
   priceFrom: number; // in IDR
   sessionDurationMinutes: number;
   subjects: string[];

@@ -5,7 +5,7 @@ import { siteSettings } from '@/content/site-settings';
 
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? 'Teman Tutor';
 const DEFAULT_DESCRIPTION =
-  'Teman Tutor | Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp169.000/sesi.';
+  'Teman Tutor | Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp130.000/sesi.';
 
 type BuildMetadataInput = {
   title: string;

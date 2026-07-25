@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { siteSettings } from '@/content/site-settings';
+import { formatAreaList } from '@/lib/utils';
 import { buildWaLink } from '@/lib/wa';
 
 const NAV_GROUPS = [
@@ -48,14 +49,14 @@ export function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-sm text-sm text-brand-navy-100">
-            {siteSettings.brandTagline}. Les privat 1-on-1 ke rumah di area Bandung & Cimahi. Mulai
-            dari Rp169.000/sesi.
+            {siteSettings.brandTagline}. Les privat 1-on-1 ke rumah di area{' '}
+            {formatAreaList(siteSettings.areaServed)}. Mulai dari Rp130.000/sesi.
           </p>
 
           <ul className="mt-6 space-y-3 text-sm text-brand-navy-100">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-brand-yellow-400" />
-              <span>Melayani area {siteSettings.areaServed.join(' & ')}</span>
+              <span>Melayani area {formatAreaList(siteSettings.areaServed)}</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 size-4 shrink-0 text-brand-yellow-400" />

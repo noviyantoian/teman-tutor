@@ -1,6 +1,7 @@
 import { MapPin } from 'lucide-react';
 
 import { siteSettings } from '@/content/site-settings';
+import { formatAreaList } from '@/lib/utils';
 
 export function ServiceAreaSection() {
   return (
@@ -12,11 +13,11 @@ export function ServiceAreaSection() {
           </div>
           <div>
             <h2 className="font-display text-heading-3 font-bold text-brand-navy">
-              Melayani area {siteSettings.areaServed.join(' & ')}
+              Melayani area {formatAreaList(siteSettings.areaServed)}
             </h2>
             <p className="mt-1 text-sm text-brand-navy-400 md:text-base">
-              Tutor datang langsung ke rumah. Untuk area di luar jangkauan, silakan
-              konsultasikan dahulu.
+              Tutor datang langsung ke rumah. Untuk area di luar jangkauan, silakan konsultasikan
+              dahulu.
             </p>
           </div>
         </div>

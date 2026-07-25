@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: 'Teman Tutor: Les Privat 1-on-1 ke Rumah, Tutor Terpercaya',
     description:
-      'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp169.000/sesi. Hadir di Bandung & Cimahi, segera di kota lainnya.',
+      'Les privat 1-on-1 ke rumah untuk SD, SMP, SMA, persiapan PTN, kursus bahasa & musik. Tutor terseleksi, metode personal, mulai Rp130.000/sesi. Hadir di Jabodetabek, Bandung & Cimahi.',
     path: '/',
     keywords: [
       'les privat',
@@ -65,10 +65,17 @@ export const metadata: Metadata = {
       'les vokal',
       'les privat Bandung',
       'les privat Cimahi',
+      'les privat Jabodetabek',
+      'les privat Jakarta',
+      'les privat Bogor',
+      'les privat Depok',
+      'les privat Tangerang',
+      'les privat Bekasi',
       'tutor SD Bandung',
       'tutor SMP Bandung',
       'tutor SMA Bandung',
       'guru les ke rumah Bandung',
+      'guru les ke rumah Jakarta',
     ],
   }),
   verification: {

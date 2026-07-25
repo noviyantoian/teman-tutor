@@ -6,7 +6,7 @@ export const faqs: Faq[] = [
     category: 'umum',
     question: 'Apa itu Teman Tutor?',
     answer:
-      'Teman Tutor adalah platform les privat 1-on-1 yang melayani pengajaran tatap muka langsung ke rumah, untuk segala jenjang mulai dari calistung anak hingga persiapan ujian masuk PTN. Kami melayani area Bandung dan Cimahi.',
+      'Teman Tutor adalah platform les privat 1-on-1 yang melayani pengajaran tatap muka langsung ke rumah, untuk segala jenjang mulai dari calistung anak hingga persiapan ujian masuk PTN. Kami melayani area Jabodetabek, Bandung, dan Cimahi.',
     sortOrder: 1,
     isActive: true,
   },
@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
     category: 'harga-paket',
     question: 'Berapa biaya les privat di Teman Tutor?',
     answer:
-      'Biaya bervariasi tergantung jenjang dan program. Untuk Calistung mulai Rp169.000/sesi, SD Rp199.000/sesi, SMP Rp235.000/sesi, SMA Rp285.000/sesi, dan persiapan ujian mulai Rp245.000/sesi. Tidak ada biaya pendaftaran dan tidak ada biaya transport tambahan.',
+      'Biaya bervariasi tergantung jenjang dan program. Untuk Calistung mulai Rp135.000/sesi, SD Rp130.000/sesi, SMP Rp165.000/sesi, SMA Rp210.000/sesi, dan persiapan ujian mulai Rp165.000/sesi. Tidak ada biaya pendaftaran dan tidak ada biaya transport tambahan.',
     sortOrder: 2,
     isActive: true,
   },
@@ -60,7 +60,7 @@ export const faqs: Faq[] = [
     category: 'area-layanan',
     question: 'Apakah Teman Tutor melayani area saya?',
     answer:
-      'Saat ini kami melayani area Bandung dan Cimahi. Untuk area di luar kedua kota tersebut, silakan konsultasikan dahulu, kami akan cek ketersediaan tutor di area Anda.',
+      'Saat ini kami melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi), Bandung, dan Cimahi. Untuk area di luar kota tersebut, silakan konsultasikan dahulu, kami akan cek ketersediaan tutor di area Anda.',
     sortOrder: 7,
     isActive: true,
   },

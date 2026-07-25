@@ -24,6 +24,15 @@ export function formatIDR(amount: number): string {
 }
 
 /**
+ * Format a service-area list the way the brand writes it.
+ * @example formatAreaList(['Jabodetabek', 'Bandung', 'Cimahi']) // "Jabodetabek, Bandung & Cimahi"
+ */
+export function formatAreaList(areas: readonly string[]): string {
+  if (areas.length <= 1) return areas[0] ?? '';
+  return `${areas.slice(0, -1).join(', ')} & ${areas.at(-1) ?? ''}`;
+}
+
+/**
  * Slugify Indonesian text, lowercase, dash-separated, alphanum only.
  */
 export function slugify(input: string): string {

@@ -47,9 +47,9 @@ export const leadFormSchema = z.object({
   schoolName: z.string().trim().max(120).optional(),
 
   subjectsInterested: z
-    .array(z.string().trim().min(1).max(60))
+    .array(z.string().trim().min(1).max(100))
     .min(1, 'Pilih minimal 1 program')
-    .max(10),
+    .max(14),
 
   sessionsPerWeek: z.enum(['1', '2', '3', '4', '5'], {
     errorMap: () => ({ message: 'Pilih jumlah sesi per minggu' }),

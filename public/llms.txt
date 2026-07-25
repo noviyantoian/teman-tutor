@@ -1,8 +1,8 @@
 # Teman Tutor
 
-> Platform les privat 1-on-1 ke rumah, melayani area Bandung dan Cimahi. "Teman Belajar, Teman Bertumbuh."
+> Platform les privat 1-on-1 ke rumah, melayani area Jabodetabek, Bandung, dan Cimahi. "Teman Belajar, Teman Bertumbuh."
 
-Teman Tutor menyediakan layanan les privat untuk SD, SMP, SMA, dan mahasiswa. Mata pelajaran mencakup Matematika, IPA, IPS, Bahasa Inggris, Bahasa Indonesia, persiapan SBMPTN/UTBK/IELTS/TOEFL, serta les musik dan seni. Tutor datang ke rumah siswa, melayani area Bandung dan Cimahi.
+Teman Tutor menyediakan layanan les privat untuk SD, SMP, SMA, dan mahasiswa. Mata pelajaran mencakup Matematika, IPA, IPS, Bahasa Inggris, Bahasa Indonesia, persiapan SBMPTN/UTBK/IELTS/TOEFL, serta les musik dan seni. Tutor datang ke rumah siswa, melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi), Bandung, dan Cimahi. Harga mulai Rp130.000/sesi.
 
 ## Halaman Utama
 

@@ -31,7 +31,7 @@ export function StatsSection() {
           </h2>
           <p className="mt-3 text-base text-brand-navy-100 md:text-lg">
             Angka-angka ini mewakili momen kemajuan yang kami bantu wujudkan bersama keluarga di
-            Bandung & Cimahi.
+            Jabodetabek, Bandung & Cimahi.
           </p>
         </div>
 

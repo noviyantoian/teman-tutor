@@ -1,14 +1,15 @@
-import { Clock, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Clock, Instagram, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 import { JsonLd } from '@/components/common/json-ld';
 import { LeadForm } from '@/components/common/lead-form';
 import { Button } from '@/components/ui/button';
 import { siteSettings } from '@/content/site-settings';
 import { buildMetadata, breadcrumbJsonLd } from '@/lib/seo';
+import { formatAreaList } from '@/lib/utils';
 import { buildWaLink } from '@/lib/wa';
 
 export const metadata = buildMetadata({
-  title: 'Kontak | Konsultasi Les Privat Bandung & Cimahi',
+  title: 'Kontak | Konsultasi Les Privat Jabodetabek, Bandung & Cimahi',
   description:
     'Isi form konsultasi atau chat WhatsApp Teman Tutor. Tim kami siap rekomendasikan tutor & paket terbaik untuk anak Anda.',
   path: '/kontak',
@@ -77,10 +78,26 @@ export default function KontakPage() {
                 <div>
                   <p className="text-sm font-semibold text-brand-navy">Area Layanan</p>
                   <p className="text-sm text-brand-navy-600">
-                    {siteSettings.areaServed.join(' & ')}
+                    {formatAreaList(siteSettings.areaServed)}
                   </p>
                 </div>
               </div>
+              {siteSettings.instagramUrl ? (
+                <div className="flex items-start gap-3">
+                  <Instagram className="mt-1 size-5 shrink-0 text-brand-yellow-500" />
+                  <div>
+                    <p className="text-sm font-semibold text-brand-navy">Instagram</p>
+                    <a
+                      href={siteSettings.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-brand-navy-600 hover:text-brand-navy"
+                    >
+                      @temantutor_id
+                    </a>
+                  </div>
+                </div>
+              ) : null}
               <div className="flex items-start gap-3">
                 <Clock className="mt-1 size-5 shrink-0 text-brand-yellow-500" />
                 <div>

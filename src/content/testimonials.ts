@@ -2,6 +2,126 @@ import type { Testimonial } from '@/types';
 
 export const testimonials: Testimonial[] = [
   {
+    id: 'testi-shafira-snbt',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-shafira-snbt.webp',
+    contentText:
+      'Skor tryout UTBK sebelum les sekitar 585. Setelah rutin les dan pembahasan soal selama 3 bulan, skor tryout terakhir naik jadi 698. Pas UTBK juga jauh lebih pede ngerjain soal.',
+    giverName: 'Shafira',
+    giverRole: 'Persiapan SNBT/UTBK',
+    category: 'persiapan-khusus',
+    sortOrder: 1,
+    isActive: true,
+  },
+  {
+    id: 'testi-aurel-ipa',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-aurel-ipa.webp',
+    contentText:
+      'Setelah sekitar 2 bulan les IPA (8x pertemuan), nilai ulangan harian Aurel naik dari 68 menjadi 87. Yang paling saya senang bukan cuma nilainya, tapi sekarang dia jadi paham konsepnya.',
+    giverName: 'Orang Tua Aurel',
+    giverRole: 'Les IPA & Matematika',
+    category: 'akademik',
+    sortOrder: 2,
+    isActive: true,
+  },
+  {
+    id: 'testi-zahra-ielts',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-zahra-ielts.webp',
+    contentText:
+      'Senang belajar persiapan IELTS di Teman Tutor. Miss-nya fun banget ngajarnya dan fokus ke soal ujian. Jadinya saya berhasil capai target skor 7.5.',
+    giverName: 'Zahra',
+    giverRole: 'Persiapan IELTS, Bandung',
+    category: 'skill',
+    sortOrder: 3,
+    isActive: true,
+  },
+  {
+    id: 'testi-katherine-cambridge',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-katherine-cambridge.webp',
+    contentText:
+      'Sebelum les, hasil tryout internal Cambridge Checkpoint Science sekitar 3.9/6.0. Setelah rutin les kurang lebih 3 bulan, hasil assessment terakhir naik jadi 5.1/6.0. Guru di sekolah juga bilang kemampuan menjawab soal analisisnya jauh lebih baik.',
+    giverName: 'Orang Tua Katherine',
+    giverRole: 'Les Akademik, Kurikulum Cambridge',
+    category: 'akademik',
+    sortOrder: 4,
+    isActive: true,
+  },
+  {
+    id: 'testi-jovan-matematika',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-jovan-matematika.webp',
+    contentText:
+      'Anak saya tipe yang grogian banget, apalagi pas ujian. Semenjak belajar dengan tutor Teman Tutor dia jadi pede ngerjain ujian dan lebih tenang. Rekomen banget, adiknya juga rencana mau daftar.',
+    giverName: 'Orang Tua Jovan',
+    giverRole: 'Les Matematika',
+    category: 'akademik',
+    sortOrder: 5,
+    isActive: true,
+  },
+  {
+    id: 'testi-kelly-piano',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-kelly-piano.webp',
+    contentText:
+      'Guru pianonya sangat sabar dalam mengajar. Anak saya jadi lebih cepat paham dan suka bermain piano. Metode belajarnya seru, tidak hanya menghafal, tapi juga bisa paham baca not.',
+    giverName: 'Orang Tua Kelly',
+    giverRole: 'Les Piano',
+    category: 'musik',
+    sortOrder: 6,
+    isActive: true,
+  },
+  {
+    id: 'testi-anjelin-mandarin',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-anjelin-mandarin.webp',
+    contentText:
+      'Laoshi-nya ngajarin langsung to the point jadi cepat ngerti, sekaligus bantu evaluasi presentasi bahasa Mandarin saya untuk ekspansi bisnis. Presentasi ke supplier jadi lancar banget.',
+    giverName: 'Anjelin',
+    giverRole: 'Les Bahasa Mandarin, Tangerang',
+    category: 'skill',
+    sortOrder: 7,
+    isActive: true,
+  },
+  {
+    id: 'testi-immanuel-akademik',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-immanuel-akademik.webp',
+    contentText:
+      'Nuel senang belajar dengan tutornya. Ngajarinnya bukan cuma kasih soal, tapi pakai cerita yang mudah dimengerti. Padahal biasanya dia suka nggak fokus kalau belajar. Jadi mau langsung ambil paket les 8 kali sebulan.',
+    giverName: 'Orang Tua Immanuel',
+    giverRole: 'Les Akademik',
+    category: 'akademik',
+    sortOrder: 8,
+    isActive: true,
+  },
+  {
+    id: 'testi-silviana-english',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-silviana-english.webp',
+    contentText:
+      'Miss-nya baik banget, bahasa Inggrisnya juga bagus, anak saya jadi semangat belajar. Jadinya saya mau perpanjang les yang seminggu 2 kali.',
+    giverName: 'Orang Tua Silviana',
+    giverRole: 'Les Bahasa Inggris',
+    category: 'skill',
+    sortOrder: 9,
+    isActive: true,
+  },
+  {
+    id: 'testi-sean-calistung',
+    type: 'screenshot',
+    mediaUrl: '/images/testimonials/testi-2026-07-sean-calistung.webp',
+    contentText:
+      'Sangat puas dengan kelas trial-nya, gurunya bagus dan cepat dekat sama anak. Hari ini belajar 1 jam juga nggak kerasa, kayak lagi main aja. Padahal biasanya anaknya cepat bosan, ini malah nggak mau gurunya pulang.',
+    giverName: 'Orang Tua Sean',
+    giverRole: 'Les Calistung',
+    category: 'akademik',
+    sortOrder: 10,
+    isActive: true,
+  },
+  {
     id: 'testi-wa-1',
     type: 'screenshot',
     mediaUrl: '/images/testimonials/WhatsApp%20Image%202026-05-15%20at%2017.31.12%20(1).webp',
@@ -10,7 +130,7 @@ export const testimonials: Testimonial[] = [
     giverName: 'Orang Tua Murid',
     giverRole: 'Les Akademik, Bandung',
     category: 'akademik',
-    sortOrder: 1,
+    sortOrder: 11,
     isActive: true,
   },
   {
@@ -22,7 +142,7 @@ export const testimonials: Testimonial[] = [
     giverName: 'Orang Tua Murid',
     giverRole: 'Persiapan SNBP, SMA',
     category: 'persiapan-khusus',
-    sortOrder: 2,
+    sortOrder: 12,
     isActive: true,
   },
   {
@@ -34,7 +154,7 @@ export const testimonials: Testimonial[] = [
     giverName: 'Orang Tua Murid',
     giverRole: 'Les Matematika, Bandung',
     category: 'akademik',
-    sortOrder: 3,
+    sortOrder: 13,
     isActive: true,
   },
   {
@@ -46,7 +166,7 @@ export const testimonials: Testimonial[] = [
     giverName: 'Murid Teman Tutor',
     giverRole: 'Pelajar, Bandung',
     category: 'akademik',
-    sortOrder: 4,
+    sortOrder: 14,
     isActive: true,
   },
 ];

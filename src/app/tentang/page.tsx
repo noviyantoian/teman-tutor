@@ -7,7 +7,7 @@ import { buildMetadata, breadcrumbJsonLd } from '@/lib/seo';
 export const metadata = buildMetadata({
   title: 'Tentang Teman Tutor | Teman Belajar, Teman Bertumbuh',
   description:
-    'Teman Tutor adalah platform les privat 1-on-1 di Bandung & Cimahi dengan pendekatan personal, teman belajar, teman bertumbuh untuk setiap anak.',
+    'Teman Tutor adalah platform les privat 1-on-1 di Jabodetabek, Bandung & Cimahi dengan pendekatan personal, teman belajar, teman bertumbuh untuk setiap anak.',
   path: '/tentang',
 });
 
@@ -49,36 +49,32 @@ export default function TentangPage() {
         <div className="container max-w-3xl text-center">
           <span className="eyebrow">Tentang Kami</span>
           <h1 className="balanced mt-4 font-display text-display-2 font-bold text-brand-navy">
-            Teman Belajar,{' '}
-            <span className="text-brand-yellow-500">Teman Bertumbuh</span>
+            Teman Belajar, <span className="text-brand-yellow-500">Teman Bertumbuh</span>
           </h1>
           <p className="mt-5 text-lg text-brand-navy-600">
-            Teman Tutor lahir dari keyakinan bahwa setiap anak punya potensi unik, yang
-            dibutuhkan adalah teman yang tepat untuk membantunya bertumbuh.
+            Teman Tutor lahir dari keyakinan bahwa setiap anak punya potensi unik, yang dibutuhkan
+            adalah teman yang tepat untuk membantunya bertumbuh.
           </p>
         </div>
       </section>
 
       <section className="section bg-white">
         <div className="container max-w-3xl">
-          <h2 className="font-display text-heading-1 font-bold text-brand-navy">
-            Cerita kami
-          </h2>
+          <h2 className="font-display text-heading-1 font-bold text-brand-navy">Cerita kami</h2>
           <div className="mt-6 space-y-5 text-base leading-relaxed text-brand-navy-600">
             <p>
-              Banyak orang tua merasa kesulitan menemukan tutor privat yang bukan hanya pintar,
-              tapi juga sabar, komunikatif, dan benar-benar peduli dengan perkembangan anak.
-              Belum lagi urusan jadwal, ongkos transport, dan biaya pendaftaran yang sering
-              membebani.
+              Banyak orang tua merasa kesulitan menemukan tutor privat yang bukan hanya pintar, tapi
+              juga sabar, komunikatif, dan benar-benar peduli dengan perkembangan anak. Belum lagi
+              urusan jadwal, ongkos transport, dan biaya pendaftaran yang sering membebani.
             </p>
             <p>
-              Karena itu kami hadir, platform les privat 1-on-1 yang fokus pada kebutuhan
-              spesifik setiap anak, dengan tutor terseleksi yang datang langsung ke rumah Anda
-              di area Bandung dan Cimahi.
+              Karena itu kami hadir, platform les privat 1-on-1 yang fokus pada kebutuhan spesifik
+              setiap anak, dengan tutor terseleksi yang datang langsung ke rumah Anda di area
+              Jabodetabek, Bandung, dan Cimahi.
             </p>
             <p>
-              Misi kami sederhana: membuat belajar terasa seperti ngobrol dengan teman dekat
-              yang lebih pintar, santai tapi serius, sabar tapi tetap menantang.
+              Misi kami sederhana: membuat belajar terasa seperti ngobrol dengan teman dekat yang
+              lebih pintar, santai tapi serius, sabar tapi tetap menantang.
             </p>
           </div>
         </div>

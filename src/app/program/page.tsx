@@ -10,9 +10,9 @@ import { programs } from '@/content/programs';
 import { buildMetadata, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-  title: 'Program & Harga | Les Privat Bandung & Cimahi',
+  title: 'Program & Harga | Les Privat Jabodetabek, Bandung & Cimahi',
   description:
-    'Daftar lengkap program les privat Teman Tutor: Calistung, SD, SMP, SMA, persiapan SNBT, bahasa asing, dan musik. Mulai Rp169.000/sesi.',
+    'Daftar lengkap program les privat Teman Tutor: Calistung, SD, SMP, SMA, persiapan SNBT, bahasa asing, dan musik. Mulai Rp130.000/sesi.',
   path: '/program',
   keywords: [
     'harga les privat Bandung',
