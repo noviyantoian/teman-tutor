@@ -47,7 +47,7 @@ next-env.d.ts
 .next/analyze/
 
 # client revision briefs & raw source assets (optimized versions live in public/)
-REVISI/
+REVISI*/
 
 # IDE
 .idea/

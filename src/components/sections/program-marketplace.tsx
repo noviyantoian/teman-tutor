@@ -296,11 +296,15 @@ export function ProgramMarketplace({ programs }: Props) {
                           aria-hidden
                           className="absolute inset-0 bg-gradient-to-t from-brand-navy/45 via-brand-navy/0 to-transparent"
                         />
-                        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-navy-600 backdrop-blur-sm sm:px-2.5 sm:text-[10px]">
+                        {/* On phones the overlay label covered the photo, so it moves into the card body below. */}
+                        <span className="absolute left-3 top-3 hidden rounded-full bg-white/90 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-navy-600 backdrop-blur-sm sm:inline-block">
                           {programCategoryLabel[p.category]}
                         </span>
                       </div>
                       <div className="flex flex-1 flex-col p-4 sm:p-5">
+                        <span className="mb-2 inline-flex w-fit items-center rounded-full bg-brand-navy-50 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-brand-navy-500 sm:hidden">
+                          {programCategoryLabel[p.category]}
+                        </span>
                         <h3 className="flex min-h-[2.5rem] items-center text-sm font-semibold leading-tight text-brand-navy sm:text-base">
                           <span className="line-clamp-2">{p.name}</span>
                         </h3>

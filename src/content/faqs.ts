@@ -51,7 +51,7 @@ export const faqs: Faq[] = [
     category: 'jadwal',
     question: 'Berapa lama durasi setiap sesi?',
     answer:
-      'Durasi tergantung jenjang: Calistung & jenjang SD bahasa/skill 60 menit, SD/SMP/SMA akademik 90 menit, dan musik 45 menit per sesi.',
+      'Durasi tergantung program: Calistung & kelas bahasa/skill 60 menit, SD/SMP/SMA akademik dan persiapan kedinasan/olimpiade 90 menit, persiapan SNBT/UTBK dan IELTS/TOEFL 120 menit, serta musik 45 menit per sesi.',
     sortOrder: 6,
     isActive: true,
   },
